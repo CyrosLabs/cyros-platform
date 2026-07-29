@@ -1,0 +1,53 @@
+# docker-compose.yml
+
+services:
+
+# Application services will be added here.
+
+# Example:
+
+#
+
+# api:
+
+# build:
+
+# context: .
+
+# dockerfile: Dockerfile
+
+# ports:
+
+# - "3000:3000"
+
+# environment:
+
+# NODE_ENV: development
+
+# depends_on:
+
+# - database
+
+database:
+image: postgres:16-alpine
+container_name: cyros-postgres
+restart: unless-stopped
+environment:
+POSTGRES_USER: cyros
+POSTGRES_PASSWORD: cyros_dev_password
+POSTGRES_DB: cyros
+ports:
+- "5432:5432"
+volumes:
+- postgres_data:/var/lib/postgresql/data
+
+redis:
+image: redis:7-alpine
+container_name: cyros-redis
+restart: unless-stopped
+ports:
+- "6379:6379"
+
+volumes:
+
+postgres_data:
