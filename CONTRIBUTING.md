@@ -202,6 +202,17 @@ Pull requests are reviewed based on:
 
 Feedback should be treated as an opportunity to improve the project.
 
+## Documentation References
+
+The following documents are the best starting points for contributors:
+
+- [DEVELOPMENT.md](DEVELOPMENT.md)
+- [ARCHITECTURE.md](ARCHITECTURE.md)
+- [TESTING.md](TESTING.md)
+- [SECURITY.md](SECURITY.md)
+- [docs/engineering/coding-standards.md](docs/engineering/coding-standards.md)
+- [docs/architecture/api-guidelines.md](docs/architecture/api-guidelines.md)
+
 ## Questions
 
 If you have questions, review the project documentation first.
