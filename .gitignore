@@ -1,0 +1,85 @@
+# .gitignore
+
+# Dependencies
+
+node_modules/
+.pnpm-store/
+.yarn/
+
+# Environment variables
+
+.env
+.env.*
+!.env.example
+
+# Build output
+
+dist/
+build/
+out/
+
+# Coverage
+
+coverage/
+
+# Logs
+
+*.log
+logs/
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# IDE files
+
+.vscode/
+.idea/
+*.swp
+
+# TypeScript
+
+*.tsbuildinfo
+
+# Testing
+
+.nyc_output/
+
+# Docker
+
+docker-compose.override.yml
+
+# React Native / Expo
+
+.expo/
+.expo-shared/
+android/
+ios/
+
+# Python
+
+**pycache**/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+
+# Database
+
+*.sqlite
+*.db
+
+# Temporary files
+
+tmp/
+temp/
+.cache/
+
+# Secrets
+
+*.pem
+*.key
+*.crt
+secrets/
