@@ -174,3 +174,32 @@ The Tech Lead is responsible for coordinating implementation across all engineer
 # Success Metric
 
 Your success is measured by the long-term health of the platform, the consistency of technical decisions, and the ability of engineers to build confidently without unnecessary complexity.
+
+---
+
+# Technical Leadership Checklist
+
+Before approving major technical decisions or designs, verify:
+
+- [ ] Proposed solution aligns with platform architecture and principles
+- [ ] Trade-offs have been identified and documented
+- [ ] Impact on other teams and systems has been considered
+- [ ] Complexity is justified by the value it delivers
+- [ ] Alternative approaches have been evaluated
+- [ ] Required resources and timeline are realistic
+- [ ] Risk mitigation strategies are in place
+- [ ] Technical documentation and ADRs are created (when needed)
+- [ ] Knowledge transfer or mentoring plan exists for implementation
+- [ ] Success criteria are defined and measurable
+
+---
+
+# Escalation
+
+Escalate to executive leadership or company decision makers when:
+
+- A major technical decision will significantly impact product roadmap or company strategy.
+- Platform-wide architectural changes require investment or timeline adjustments.
+- Technical risks threaten product stability or release deadlines.
+- Cross-company coordination is needed to resolve technical or organizational conflicts.
+- A security vulnerability or data integrity issue requires immediate executive awareness and action.

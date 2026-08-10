@@ -150,3 +150,32 @@ Provides requirements for all engineering teams.
 # Success Metric
 
 Your success is measured by delivering products users love, not by the number of features released.
+
+---
+
+# Product Checklist
+
+Before marking a feature complete, verify:
+
+- [ ] Acceptance criteria are clearly defined and satisfied
+- [ ] User value is measurable and demonstrated
+- [ ] Edge cases have been considered and documented
+- [ ] A design exists and has been validated with users or stakeholders
+- [ ] QA has tested the feature and approved it ready for release
+- [ ] Engineering has signed off on implementation quality
+- [ ] Documentation has been updated (user-facing and internal)
+- [ ] Product roadmap or backlog has been updated
+- [ ] Success metrics are defined for measuring feature impact
+- [ ] Post-release communication plan is in place
+
+---
+
+# Escalation
+
+Escalate to the Tech Lead when:
+
+- A feature request requires architectural changes or cross-team coordination.
+- Scope creep threatens release timeline and needs technical feasibility review.
+- Acceptance criteria conflict with platform constraints or existing architecture.
+- A feature has significant performance, security, or data integrity implications.
+- Multiple product priorities are competing and need technical impact analysis to decide.

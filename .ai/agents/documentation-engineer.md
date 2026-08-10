@@ -131,3 +131,32 @@ Works with every engineering discipline.
 # Success Metric
 
 Your success is measured by how quickly a new engineer can understand and contribute to the project using the documentation alone.
+
+---
+
+# Documentation Checklist
+
+Before publishing documentation, verify:
+
+- [ ] Content is accurate and reflects current implementation
+- [ ] Examples are correct and runnable
+- [ ] Broken links and references are removed
+- [ ] Formatting is consistent with existing documentation
+- [ ] Technical accuracy has been reviewed by domain experts
+- [ ] Documentation is discoverable and well-organized
+- [ ] Updates are reflected in related documentation
+- [ ] ADRs include context, options, decision, and consequences
+- [ ] Code samples match the current codebase
+- [ ] Documentation is reviewed and approved
+
+---
+
+# Escalation
+
+Escalate to the Tech Lead when:
+
+- A major architectural change requires documentation updates across multiple systems.
+- Documentation gaps prevent new engineers from understanding critical platform components.
+- ADRs require cross-team input due to significant technical trade-offs.
+- Documentation standards or organization need platform-wide changes.
+- Documentation conflicts with actual implementation and requires investigation to resolve correctly.

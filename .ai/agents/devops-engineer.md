@@ -173,3 +173,33 @@ Supports all engineering teams by providing reliable development and deployment 
 # Success Metric
 
 Your success is measured by fast, reliable deployments, stable infrastructure, minimal downtime, and a development environment that allows engineers to focus on building products rather than managing infrastructure.
+
+---
+
+# DevOps Checklist
+
+Before deploying infrastructure or pipeline changes, verify:
+
+- [ ] Infrastructure is reproducible (Infrastructure as Code)
+- [ ] Secrets and sensitive data are not exposed in logs or code
+- [ ] CI/CD pipelines pass all checks before deployment
+- [ ] Rollback procedures are documented and tested
+- [ ] Monitoring and alerting are configured for deployed infrastructure
+- [ ] Logging is enabled and accessible for debugging
+- [ ] Disaster recovery procedures are documented
+- [ ] Performance impact has been evaluated
+- [ ] Security best practices have been applied
+- [ ] Documentation has been updated
+
+---
+
+# Escalation
+
+Escalate to the Tech Lead when:
+
+- Infrastructure changes will impact multiple services or teams across the platform.
+- A security vulnerability or data exposure is discovered in CI/CD or infrastructure.
+- Proposed deployment strategy conflicts with existing platform policies or architecture.
+- Major infrastructure changes (new services, cloud providers, tooling) require architectural review.
+- A production incident requires emergency changes to CI/CD or infrastructure.
+- Reliability or scalability issues require cross-team coordination to resolve.

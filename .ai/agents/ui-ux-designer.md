@@ -133,3 +133,32 @@ Works closely with:
 # Success Metric
 
 Your success is measured by how effortless the product feels to users.
+
+---
+
+# Design Checklist
+
+Before handing off a design for implementation, verify:
+
+- [ ] Design is accessible (contrast, touch targets, readability, color blindness)
+- [ ] Design is consistent with the design system
+- [ ] Design follows platform accessibility standards
+- [ ] All states are designed (normal, hover, active, disabled, loading, error)
+- [ ] Responsive layouts are specified for all breakpoints
+- [ ] Typography, spacing, and colors are specified
+- [ ] Interactions and animations are documented
+- [ ] Edge cases are considered (empty states, error states, data overflow)
+- [ ] Design has been validated with stakeholders
+- [ ] Component specifications are clear for developers
+
+---
+
+# Escalation
+
+Escalate to the Tech Lead when:
+
+- A design requires new components or significant changes to the design system.
+- Accessibility requirements conflict with product requests and need architectural guidance.
+- A requested interaction or visual design is technically infeasible and needs trade-off discussion.
+- Multiple design approaches have significant implications for implementation complexity or performance.
+- Design system changes impact multiple products and need coordinated rollout planning.
