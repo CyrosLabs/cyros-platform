@@ -1,0 +1,2297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen renders core home screen sections 1`] = `
+<View
+  style={
+    {
+      "backgroundColor": "#F8F6FF",
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    contentContainerStyle={
+      {
+        "paddingBottom": 96,
+        "paddingHorizontal": 20,
+      }
+    }
+    showsVerticalScrollIndicator={false}
+  >
+    <View>
+      <View
+        style={
+          {
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 28,
+            "elevation": 5,
+            "marginTop": 12,
+            "padding": 20,
+            "shadowColor": "rgba(79, 44, 154, 0.12)",
+            "shadowOffset": {
+              "height": 8,
+              "width": 0,
+            },
+            "shadowOpacity": 0.12,
+            "shadowRadius": 20,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#7B5BFF",
+                "borderRadius": 28,
+                "height": 58,
+                "justifyContent": "center",
+                "width": 58,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#FFFFFF",
+                  "fontSize": 24,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              C
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "flex": 1,
+                "marginLeft": 14,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#2F2640",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              Good evening, Cynthia!
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#7A6E96",
+                  "fontSize": 13,
+                  "marginTop": 4,
+                }
+              }
+            >
+              Ready for a new chapter?
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginTop": 18,
+            }
+          }
+        >
+          <View
+            accessibilityLabel="Notifications"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 16,
+                "elevation": 4,
+                "height": 44,
+                "justifyContent": "center",
+                "shadowColor": "rgba(79, 44, 154, 0.12)",
+                "shadowOffset": {
+                  "height": 4,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.12,
+                "shadowRadius": 8,
+                "width": 44,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontSize": 20,
+                }
+              }
+            >
+              🔔
+            </Text>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "backgroundColor": "#FF90B7",
+                  "borderRadius": 9,
+                  "height": 18,
+                  "justifyContent": "center",
+                  "minWidth": 18,
+                  "paddingHorizontal": 4,
+                  "position": "absolute",
+                  "right": 6,
+                  "top": 6,
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "color": "white",
+                    "fontSize": 10,
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                3
+              </Text>
+            </View>
+          </View>
+          <View
+            accessibilityLabel="Settings"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#FFFFFF",
+                "borderRadius": 16,
+                "elevation": 4,
+                "height": 44,
+                "justifyContent": "center",
+                "shadowColor": "rgba(79, 44, 154, 0.12)",
+                "shadowOffset": {
+                  "height": 4,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.12,
+                "shadowRadius": 8,
+                "width": 44,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontSize": 20,
+                }
+              }
+            >
+              ⚙️
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#F4F0FF",
+              "borderRadius": 22,
+              "marginTop": 18,
+              "padding": 18,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#2F2640",
+                "fontSize": 14,
+                "fontWeight": "700",
+                "marginBottom": 10,
+              }
+            }
+          >
+            👑 Level 
+            3
+          </Text>
+          <View
+            style={
+              {
+                "marginTop": 12,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "#F4F0FF",
+                  "borderRadius": 999,
+                  "height": 10,
+                  "overflow": "hidden",
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                style={
+                  [
+                    {
+                      "backgroundColor": "#7B5BFF",
+                      "borderRadius": 999,
+                      "height": "100%",
+                    },
+                    {
+                      "width": "61.5%",
+                    },
+                  ]
+                }
+              />
+            </View>
+            <Text
+              style={
+                {
+                  "color": "#7A6E96",
+                  "fontSize": 12,
+                  "fontWeight": "600",
+                  "marginTop": 8,
+                }
+              }
+            >
+              1,230 / 2,000 XP
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 24,
+              "elevation": 4,
+              "flex": 1,
+              "padding": 18,
+              "shadowColor": "rgba(79, 44, 154, 0.12)",
+              "shadowOffset": {
+                "height": 8,
+                "width": 0,
+              },
+              "shadowOpacity": 0.08,
+              "shadowRadius": 18,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#7B5BFF",
+                  "fontSize": 24,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              🔥 
+              18
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#7A6E96",
+                  "fontSize": 14,
+                }
+              }
+            >
+              Day Streak
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#7A6E96",
+                      "fontSize": 12,
+                      "marginBottom": 6,
+                    },
+                    false,
+                  ]
+                }
+              >
+                M
+              </Text>
+              <View
+                style={
+                  [
+                    {
+                      "borderRadius": 9,
+                      "height": 18,
+                      "width": 18,
+                    },
+                    {
+                      "backgroundColor": "#7B5BFF",
+                    },
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#7A6E96",
+                      "fontSize": 12,
+                      "marginBottom": 6,
+                    },
+                    false,
+                  ]
+                }
+              >
+                T
+              </Text>
+              <View
+                style={
+                  [
+                    {
+                      "borderRadius": 9,
+                      "height": 18,
+                      "width": 18,
+                    },
+                    {
+                      "backgroundColor": "#7B5BFF",
+                    },
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#7A6E96",
+                      "fontSize": 12,
+                      "marginBottom": 6,
+                    },
+                    false,
+                  ]
+                }
+              >
+                W
+              </Text>
+              <View
+                style={
+                  [
+                    {
+                      "borderRadius": 9,
+                      "height": 18,
+                      "width": 18,
+                    },
+                    {
+                      "backgroundColor": "#7B5BFF",
+                    },
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#7A6E96",
+                      "fontSize": 12,
+                      "marginBottom": 6,
+                    },
+                    false,
+                  ]
+                }
+              >
+                T
+              </Text>
+              <View
+                style={
+                  [
+                    {
+                      "borderRadius": 9,
+                      "height": 18,
+                      "width": 18,
+                    },
+                    {
+                      "backgroundColor": "#7B5BFF",
+                    },
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#7A6E96",
+                      "fontSize": 12,
+                      "marginBottom": 6,
+                    },
+                    false,
+                  ]
+                }
+              >
+                F
+              </Text>
+              <View
+                style={
+                  [
+                    {
+                      "borderRadius": 9,
+                      "height": 18,
+                      "width": 18,
+                    },
+                    {
+                      "backgroundColor": "#F4F0FF",
+                      "borderColor": "#ECE7F8",
+                      "borderWidth": 1,
+                    },
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#7A6E96",
+                      "fontSize": 12,
+                      "marginBottom": 6,
+                    },
+                    false,
+                  ]
+                }
+              >
+                S
+              </Text>
+              <View
+                style={
+                  [
+                    {
+                      "borderRadius": 9,
+                      "height": 18,
+                      "width": 18,
+                    },
+                    {
+                      "backgroundColor": "#F4F0FF",
+                      "borderColor": "#ECE7F8",
+                      "borderWidth": 1,
+                    },
+                  ]
+                }
+              />
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                }
+              }
+            >
+              <Text
+                style={
+                  [
+                    {
+                      "color": "#7A6E96",
+                      "fontSize": 12,
+                      "marginBottom": 6,
+                    },
+                    {
+                      "color": "#7B5BFF",
+                      "fontWeight": "700",
+                    },
+                  ]
+                }
+              >
+                S
+              </Text>
+              <View
+                style={
+                  [
+                    {
+                      "borderRadius": 9,
+                      "height": 18,
+                      "width": 18,
+                    },
+                    {
+                      "backgroundColor": "#F4F0FF",
+                      "borderColor": "#ECE7F8",
+                      "borderWidth": 1,
+                    },
+                  ]
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 24,
+              "elevation": 4,
+              "flex": 1,
+              "padding": 18,
+              "shadowColor": "rgba(79, 44, 154, 0.12)",
+              "shadowOffset": {
+                "height": 8,
+                "width": 0,
+              },
+              "shadowOpacity": 0.08,
+              "shadowRadius": 18,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "marginBottom": 14,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#2F2640",
+                  "fontSize": 14,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              Hearts
+            </Text>
+            <View
+              accessibilityLabel="Recharge hearts"
+              accessibilityState={
+                {
+                  "busy": undefined,
+                  "checked": undefined,
+                  "disabled": undefined,
+                  "expanded": undefined,
+                  "selected": undefined,
+                }
+              }
+              accessibilityValue={
+                {
+                  "max": undefined,
+                  "min": undefined,
+                  "now": undefined,
+                  "text": undefined,
+                }
+              }
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                {
+                  "alignItems": "center",
+                  "backgroundColor": "#7B5BFF",
+                  "borderRadius": 12,
+                  "height": 34,
+                  "justifyContent": "center",
+                  "width": 34,
+                }
+              }
+            >
+              <Text
+                style={
+                  {
+                    "color": "#FFFFFF",
+                    "fontSize": 20,
+                    "fontWeight": "700",
+                  }
+                }
+              >
+                +
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              {
+                "flexDirection": "row",
+                "flexWrap": "wrap",
+              }
+            }
+          >
+            <Text
+              style={
+                [
+                  {
+                    "fontSize": 24,
+                    "marginRight": 6,
+                  },
+                  {
+                    "opacity": 1,
+                  },
+                ]
+              }
+            >
+              ❤️
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "fontSize": 24,
+                    "marginRight": 6,
+                  },
+                  {
+                    "opacity": 1,
+                  },
+                ]
+              }
+            >
+              ❤️
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "fontSize": 24,
+                    "marginRight": 6,
+                  },
+                  {
+                    "opacity": 1,
+                  },
+                ]
+              }
+            >
+              ❤️
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "fontSize": 24,
+                    "marginRight": 6,
+                  },
+                  {
+                    "opacity": 1,
+                  },
+                ]
+              }
+            >
+              ❤️
+            </Text>
+            <Text
+              style={
+                [
+                  {
+                    "fontSize": 24,
+                    "marginRight": 6,
+                  },
+                  {
+                    "opacity": 1,
+                  },
+                ]
+              }
+            >
+              ❤️
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 28,
+            "elevation": 6,
+            "marginTop": 18,
+            "padding": 18,
+            "shadowColor": "rgba(79, 44, 154, 0.12)",
+            "shadowOffset": {
+              "height": 10,
+              "width": 0,
+            },
+            "shadowOpacity": 0.12,
+            "shadowRadius": 22,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "backgroundColor": "#F0B3FF",
+                "borderRadius": 22,
+                "elevation": 5,
+                "paddingHorizontal": 16,
+                "paddingVertical": 12,
+                "position": "absolute",
+                "right": 20,
+                "shadowColor": "rgba(79, 44, 154, 0.12)",
+                "shadowOffset": {
+                  "height": 6,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.1,
+                "shadowRadius": 12,
+                "top": 12,
+                "zIndex": 2,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#2F2640",
+                  "fontSize": 16,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              화이팅!
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#7A6E96",
+                  "fontSize": 13,
+                  "marginTop": 4,
+                }
+              }
+            >
+              Fighting!
+            </Text>
+          </View>
+          <View
+            style={
+              [
+                {
+                  "alignItems": "center",
+                  "justifyContent": "center",
+                  "position": "relative",
+                },
+                {
+                  "height": 160,
+                  "width": 160,
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "backgroundColor": "#ffe2ea",
+                    "borderRadius": 24,
+                    "height": 58,
+                    "position": "absolute",
+                    "top": 10,
+                    "width": 40,
+                    "zIndex": 0,
+                  },
+                  {
+                    "left": 18,
+                    "transform": [
+                      {
+                        "rotate": "-25deg",
+                      },
+                    ],
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                [
+                  {
+                    "backgroundColor": "#ffe2ea",
+                    "borderRadius": 24,
+                    "height": 58,
+                    "position": "absolute",
+                    "top": 10,
+                    "width": 40,
+                    "zIndex": 0,
+                  },
+                  {
+                    "right": 18,
+                    "transform": [
+                      {
+                        "rotate": "25deg",
+                      },
+                    ],
+                  },
+                ]
+              }
+            />
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "backgroundColor": "#fff0ef",
+                  "borderColor": "#ffd1dc",
+                  "borderRadius": 60,
+                  "borderWidth": 2,
+                  "height": 110,
+                  "justifyContent": "center",
+                  "width": 120,
+                  "zIndex": 1,
+                }
+              }
+            >
+              <View
+                style={
+                  {
+                    "backgroundColor": "#5d3b50",
+                    "borderRadius": 6,
+                    "height": 12,
+                    "marginHorizontal": 12,
+                    "width": 12,
+                  }
+                }
+              />
+              <View
+                style={
+                  {
+                    "backgroundColor": "#5d3b50",
+                    "borderRadius": 6,
+                    "height": 12,
+                    "marginHorizontal": 12,
+                    "width": 12,
+                  }
+                }
+              />
+              <View
+                style={
+                  {
+                    "backgroundColor": "#ce7a8a",
+                    "borderRadius": 10,
+                    "height": 14,
+                    "marginTop": 8,
+                    "width": 18,
+                  }
+                }
+              />
+            </View>
+            <View
+              style={
+                {
+                  "backgroundColor": "#fff1f4",
+                  "borderColor": "#ffd1dc",
+                  "borderRadius": 70,
+                  "borderWidth": 2,
+                  "bottom": 10,
+                  "height": 80,
+                  "position": "absolute",
+                  "width": 140,
+                }
+              }
+            />
+            <View
+              style={
+                {
+                  "backgroundColor": "#ffe2ea",
+                  "borderRadius": 20,
+                  "bottom": 6,
+                  "height": 40,
+                  "position": "absolute",
+                  "right": 6,
+                  "transform": [
+                    {
+                      "rotate": "35deg",
+                    },
+                  ],
+                  "width": 40,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 28,
+            "elevation": 7,
+            "marginTop": 18,
+            "padding": 20,
+            "shadowColor": "rgba(79, 44, 154, 0.12)",
+            "shadowOffset": {
+              "height": 10,
+              "width": 0,
+            },
+            "shadowOpacity": 0.12,
+            "shadowRadius": 20,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "marginBottom": 16,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#7B5BFF",
+                "fontSize": 16,
+                "fontWeight": "700",
+              }
+            }
+          >
+            🧩 Continue Learning
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#F0B3FF",
+                "borderRadius": 20,
+                "height": 78,
+                "justifyContent": "center",
+                "marginRight": 16,
+                "width": 78,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#2F2640",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                  "textAlign": "center",
+                }
+              }
+            >
+              TOPIK I
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "flex": 1,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#2F2640",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              Lesson 
+              4
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#7A6E96",
+                  "fontSize": 14,
+                  "marginTop": 6,
+                }
+              }
+            >
+              Grammar
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#7A6E96",
+                  "fontSize": 12,
+                  "marginTop": 8,
+                }
+              }
+            >
+              ~
+              15
+               min • 
+              40
+               words
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginTop": 18,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "backgroundColor": "#F4F0FF",
+                "borderRadius": 999,
+                "flex": 1,
+                "height": 10,
+                "marginRight": 12,
+                "overflow": "hidden",
+              }
+            }
+          >
+            <View
+              style={
+                [
+                  {
+                    "backgroundColor": "#7B5BFF",
+                    "height": "100%",
+                  },
+                  {
+                    "width": "65%",
+                  },
+                ]
+              }
+            />
+          </View>
+          <Text
+            style={
+              {
+                "color": "#7A6E96",
+                "fontSize": 12,
+                "minWidth": 35,
+                "textAlign": "right",
+              }
+            }
+          >
+            65
+            %
+          </Text>
+        </View>
+        <View
+          accessibilityLabel="Continue lesson"
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignSelf": "flex-end",
+              "marginTop": 18,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#7B5BFF",
+                "fontSize": 14,
+                "fontWeight": "700",
+              }
+            }
+          >
+            Continue →
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "flexDirection": "column",
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 24,
+              "elevation": 4,
+              "flex": 1,
+              "padding": 18,
+              "shadowColor": "rgba(79, 44, 154, 0.12)",
+              "shadowOffset": {
+                "height": 10,
+                "width": 0,
+              },
+              "shadowOpacity": 0.09,
+              "shadowRadius": 20,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#7B5BFF",
+                "fontSize": 16,
+                "fontWeight": "700",
+                "marginBottom": 10,
+              }
+            }
+          >
+            🎯 Today's Challenge
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#2F2640",
+                "fontSize": 14,
+                "marginBottom": 16,
+              }
+            }
+          >
+            Learn 10 new words
+          </Text>
+          <View
+            style={
+              {
+                "marginBottom": 16,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "#F4F0FF",
+                  "borderRadius": 999,
+                  "height": 10,
+                  "marginBottom": 8,
+                  "overflow": "hidden",
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                style={
+                  [
+                    {
+                      "backgroundColor": "#7B5BFF",
+                      "height": "100%",
+                    },
+                    {
+                      "width": "60%",
+                    },
+                  ]
+                }
+              />
+            </View>
+            <Text
+              style={
+                {
+                  "color": "#7A6E96",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              6
+               / 
+              10
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "flexDirection": "row",
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontSize": 18,
+                }
+              }
+            >
+              🎁
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#7A6E96",
+                  "fontSize": 14,
+                  "marginLeft": 6,
+                }
+              }
+            >
+              Reward
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#2F2640",
+                  "fontSize": 14,
+                  "fontWeight": "700",
+                  "marginLeft": "auto",
+                }
+              }
+            >
+              ⭐ 
+              50
+               XP
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            {
+              "backgroundColor": "#FFFFFF",
+              "borderRadius": 24,
+              "elevation": 4,
+              "flex": 1,
+              "padding": 18,
+              "shadowColor": "rgba(79, 44, 154, 0.12)",
+              "shadowOffset": {
+                "height": 10,
+                "width": 0,
+              },
+              "shadowOpacity": 0.09,
+              "shadowRadius": 20,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#7B5BFF",
+                "fontSize": 16,
+                "fontWeight": "700",
+                "marginBottom": 10,
+              }
+            }
+          >
+            🚩 Daily Goal
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#2F2640",
+                "fontSize": 14,
+                "marginBottom": 16,
+              }
+            }
+          >
+            Earn 100 XP
+          </Text>
+          <View
+            style={
+              {
+                "marginBottom": 16,
+              }
+            }
+          >
+            <View
+              style={
+                {
+                  "backgroundColor": "#F4F0FF",
+                  "borderRadius": 999,
+                  "height": 10,
+                  "marginBottom": 8,
+                  "overflow": "hidden",
+                  "width": "100%",
+                }
+              }
+            >
+              <View
+                style={
+                  [
+                    {
+                      "backgroundColor": "#F0B3FF",
+                      "height": "100%",
+                    },
+                    {
+                      "width": "60%",
+                    },
+                  ]
+                }
+              />
+            </View>
+            <Text
+              style={
+                {
+                  "color": "#7A6E96",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              60
+               / 
+              100
+            </Text>
+          </View>
+          <Text
+            style={
+              {
+                "color": "#2F2640",
+                "fontSize": 14,
+                "fontWeight": "700",
+              }
+            }
+          >
+            Keep going! 👏
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 28,
+            "elevation": 6,
+            "marginTop": 18,
+            "padding": 20,
+            "shadowColor": "rgba(79, 44, 154, 0.12)",
+            "shadowOffset": {
+              "height": 10,
+              "width": 0,
+            },
+            "shadowOpacity": 0.12,
+            "shadowRadius": 24,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginBottom": 18,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#2F2640",
+                "fontSize": 16,
+                "fontWeight": "700",
+              }
+            }
+          >
+            TOPIK I Course Map
+          </Text>
+          <View
+            accessibilityLabel="View all course map"
+            accessibilityState={
+              {
+                "busy": undefined,
+                "checked": undefined,
+                "disabled": undefined,
+                "expanded": undefined,
+                "selected": undefined,
+              }
+            }
+            accessibilityValue={
+              {
+                "max": undefined,
+                "min": undefined,
+                "now": undefined,
+                "text": undefined,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+          >
+            <Text
+              style={
+                {
+                  "color": "#7B5BFF",
+                  "fontSize": 12,
+                  "fontWeight": "700",
+                }
+              }
+            >
+              View all &gt;
+            </Text>
+          </View>
+        </View>
+        <RCTScrollView
+          contentContainerStyle={
+            {
+              "alignItems": "center",
+            }
+          }
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+        >
+          <View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "marginRight": 16,
+                  "width": 74,
+                }
+              }
+            >
+              <View
+                style={
+                  [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "#F4F0FF",
+                      "borderColor": "#ECE7F8",
+                      "borderRadius": 25,
+                      "borderWidth": 2,
+                      "height": 50,
+                      "justifyContent": "center",
+                      "width": 50,
+                    },
+                    false,
+                    {
+                      "backgroundColor": "#4ABA8A",
+                      "borderColor": "#4ABA8A",
+                    },
+                    false,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#2F2640",
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                      },
+                      {
+                        "color": "#FFFFFF",
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  ✓
+                </Text>
+              </View>
+              <Text
+                style={
+                  {
+                    "color": "#7A6E96",
+                    "fontSize": 11,
+                    "marginTop": 10,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Vocab
+              </Text>
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginTop": 8,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    {
+                      "fontSize": 12,
+                      "marginHorizontal": 1,
+                    }
+                  }
+                >
+                  ⭐
+                </Text>
+                <Text
+                  style={
+                    {
+                      "fontSize": 12,
+                      "marginHorizontal": 1,
+                    }
+                  }
+                >
+                  ⭐
+                </Text>
+                <Text
+                  style={
+                    {
+                      "fontSize": 12,
+                      "marginHorizontal": 1,
+                    }
+                  }
+                >
+                  ⭐
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "marginRight": 16,
+                  "width": 74,
+                }
+              }
+            >
+              <View
+                style={
+                  [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "#F4F0FF",
+                      "borderColor": "#ECE7F8",
+                      "borderRadius": 25,
+                      "borderWidth": 2,
+                      "height": 50,
+                      "justifyContent": "center",
+                      "width": 50,
+                    },
+                    false,
+                    {
+                      "backgroundColor": "#4ABA8A",
+                      "borderColor": "#4ABA8A",
+                    },
+                    false,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#2F2640",
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                      },
+                      {
+                        "color": "#FFFFFF",
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  ✓
+                </Text>
+              </View>
+              <Text
+                style={
+                  {
+                    "color": "#7A6E96",
+                    "fontSize": 11,
+                    "marginTop": 10,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Vocab
+              </Text>
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginTop": 8,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    {
+                      "fontSize": 12,
+                      "marginHorizontal": 1,
+                    }
+                  }
+                >
+                  ⭐
+                </Text>
+                <Text
+                  style={
+                    {
+                      "fontSize": 12,
+                      "marginHorizontal": 1,
+                    }
+                  }
+                >
+                  ⭐
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "marginRight": 16,
+                  "width": 74,
+                }
+              }
+            >
+              <View
+                style={
+                  [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "#F4F0FF",
+                      "borderColor": "#ECE7F8",
+                      "borderRadius": 25,
+                      "borderWidth": 2,
+                      "height": 50,
+                      "justifyContent": "center",
+                      "width": 50,
+                    },
+                    false,
+                    {
+                      "backgroundColor": "#4ABA8A",
+                      "borderColor": "#4ABA8A",
+                    },
+                    false,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#2F2640",
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                      },
+                      {
+                        "color": "#FFFFFF",
+                      },
+                      false,
+                    ]
+                  }
+                >
+                  ✓
+                </Text>
+              </View>
+              <Text
+                style={
+                  {
+                    "color": "#7A6E96",
+                    "fontSize": 11,
+                    "marginTop": 10,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Vocab
+              </Text>
+              <View
+                style={
+                  {
+                    "flexDirection": "row",
+                    "marginTop": 8,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    {
+                      "fontSize": 12,
+                      "marginHorizontal": 1,
+                    }
+                  }
+                >
+                  ⭐
+                </Text>
+                <Text
+                  style={
+                    {
+                      "fontSize": 12,
+                      "marginHorizontal": 1,
+                    }
+                  }
+                >
+                  ⭐
+                </Text>
+                <Text
+                  style={
+                    {
+                      "fontSize": 12,
+                      "marginHorizontal": 1,
+                    }
+                  }
+                >
+                  ⭐
+                </Text>
+              </View>
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "marginRight": 16,
+                  "width": 74,
+                }
+              }
+            >
+              <View
+                style={
+                  [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "#F4F0FF",
+                      "borderColor": "#ECE7F8",
+                      "borderRadius": 25,
+                      "borderWidth": 2,
+                      "height": 50,
+                      "justifyContent": "center",
+                      "width": 50,
+                    },
+                    {
+                      "backgroundColor": "#7B5BFF",
+                      "borderColor": "#7B5BFF",
+                    },
+                    false,
+                    false,
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#2F2640",
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                      },
+                      false,
+                      false,
+                    ]
+                  }
+                >
+                  4
+                </Text>
+              </View>
+              <Text
+                style={
+                  {
+                    "color": "#7A6E96",
+                    "fontSize": 11,
+                    "marginTop": 10,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Grammar
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "marginRight": 16,
+                  "width": 74,
+                }
+              }
+            >
+              <View
+                style={
+                  [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "#F4F0FF",
+                      "borderColor": "#ECE7F8",
+                      "borderRadius": 25,
+                      "borderWidth": 2,
+                      "height": 50,
+                      "justifyContent": "center",
+                      "width": 50,
+                    },
+                    false,
+                    false,
+                    {
+                      "backgroundColor": "#F4F0FF",
+                      "borderColor": "#C7C0D9",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#2F2640",
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                      },
+                      false,
+                      {
+                        "color": "#7A6E96",
+                      },
+                    ]
+                  }
+                >
+                  🔒
+                </Text>
+              </View>
+              <Text
+                style={
+                  {
+                    "color": "#7A6E96",
+                    "fontSize": 11,
+                    "marginTop": 10,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Vocab
+              </Text>
+            </View>
+            <View
+              style={
+                {
+                  "alignItems": "center",
+                  "marginRight": 16,
+                  "width": 74,
+                }
+              }
+            >
+              <View
+                style={
+                  [
+                    {
+                      "alignItems": "center",
+                      "backgroundColor": "#F4F0FF",
+                      "borderColor": "#ECE7F8",
+                      "borderRadius": 25,
+                      "borderWidth": 2,
+                      "height": 50,
+                      "justifyContent": "center",
+                      "width": 50,
+                    },
+                    false,
+                    false,
+                    {
+                      "backgroundColor": "#F4F0FF",
+                      "borderColor": "#C7C0D9",
+                    },
+                  ]
+                }
+              >
+                <Text
+                  style={
+                    [
+                      {
+                        "color": "#2F2640",
+                        "fontSize": 16,
+                        "fontWeight": "700",
+                      },
+                      false,
+                      {
+                        "color": "#7A6E96",
+                      },
+                    ]
+                  }
+                >
+                  🔒
+                </Text>
+              </View>
+              <Text
+                style={
+                  {
+                    "color": "#7A6E96",
+                    "fontSize": 11,
+                    "marginTop": 10,
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Vocab
+              </Text>
+            </View>
+          </View>
+        </RCTScrollView>
+      </View>
+      <View
+        style={
+          {
+            "backgroundColor": "#FFFFFF",
+            "borderRadius": 28,
+            "elevation": 6,
+            "marginTop": 18,
+            "padding": 20,
+            "shadowColor": "rgba(79, 44, 154, 0.12)",
+            "shadowOffset": {
+              "height": 10,
+              "width": 0,
+            },
+            "shadowOpacity": 0.12,
+            "shadowRadius": 24,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "marginBottom": 18,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#2F2640",
+                "fontSize": 16,
+                "fontWeight": "700",
+              }
+            }
+          >
+            Your Progress
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#7B5BFF",
+                "fontSize": 12,
+                "fontWeight": "700",
+              }
+            }
+          >
+            View stats &gt;
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "backgroundColor": "#F4F0FF",
+                "borderRadius": 20,
+                "flex": 1,
+                "marginBottom": 14,
+                "minWidth": 80,
+                "padding": 14,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#2F2640",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "marginBottom": 6,
+                }
+              }
+            >
+              124
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#7A6E96",
+                  "fontSize": 12,
+                }
+              }
+            >
+              Words
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "backgroundColor": "#F4F0FF",
+                "borderRadius": 20,
+                "flex": 1,
+                "marginBottom": 14,
+                "minWidth": 80,
+                "padding": 14,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#2F2640",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "marginBottom": 6,
+                }
+              }
+            >
+              23
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#7A6E96",
+                  "fontSize": 12,
+                }
+              }
+            >
+              Favorites
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "backgroundColor": "#F4F0FF",
+                "borderRadius": 20,
+                "flex": 1,
+                "marginBottom": 14,
+                "minWidth": 80,
+                "padding": 14,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#2F2640",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "marginBottom": 6,
+                }
+              }
+            >
+              8
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#7A6E96",
+                  "fontSize": 12,
+                }
+              }
+            >
+              Achievements
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "backgroundColor": "#F4F0FF",
+                "borderRadius": 20,
+                "flex": 1,
+                "marginBottom": 14,
+                "minWidth": 80,
+                "padding": 14,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#2F2640",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "marginBottom": 6,
+                }
+              }
+            >
+              3.2h
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#7A6E96",
+                  "fontSize": 12,
+                }
+              }
+            >
+              Study Time
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

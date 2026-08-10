@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Haru Haru",
+    "slug": "haru-haru",
+    "version": "1.0.0",
+    "platforms": ["ios", "android"],
+    "sdkVersion": "50.0.0",
+    "entryPoint": "./App.tsx"
+  }
+}
