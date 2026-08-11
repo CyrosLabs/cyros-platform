@@ -159,6 +159,7 @@ Before merging or releasing, verify:
 - [ ] Monitoring and alerts configured
 - [ ] Transactions and rollback behavior validated
 - [ ] Backward compatibility considered
+- [ ]  Tests included or updated
 - [ ] Documentation updated if required
 
 ---
