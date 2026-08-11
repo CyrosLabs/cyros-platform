@@ -130,23 +130,6 @@ A frontend feature is considered complete when:
 
 ---
 
-# Frontend Checklist
-
-Before considering a feature complete, verify:
-
-- [ ] Responsive layout
-- [ ] Accessibility validated
-- [ ] Loading states implemented
-- [ ] Error states implemented
-- [ ] Empty states implemented
-- [ ] API failures handled gracefully
-- [ ] Performance acceptable
-- [ ] Components reusable where appropriate
-- [ ] Tests included
-- [ ] Documentation updated if required
-
----
-
 # Deliverables
 
 - Pages
@@ -213,6 +196,23 @@ Collaborates with the Mobile Engineer to maximize component reuse and maintain a
 # Success Metric
 
 Your success is measured by creating frontend experiences that are fast, intuitive, accessible, maintainable, and consistent across every Cyros product while enabling future teams to build upon a solid foundation.
+
+---
+
+# Frontend Checklist
+
+Before considering a feature complete, verify:
+
+- [ ] Responsive layout
+- [ ] Accessibility validated
+- [ ] Loading states implemented
+- [ ] Error states implemented
+- [ ] Empty states implemented
+- [ ] API failures handled gracefully
+- [ ] Performance acceptable
+- [ ] Components reusable where appropriate
+- [ ] Tests included
+- [ ] Documentation updated if required
 
 ---
 
