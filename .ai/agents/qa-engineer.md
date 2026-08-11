@@ -134,26 +134,7 @@ A feature is **not Done** unless:
 
 ---
 
-# Quality Checklist
-
-Before approving a Pull Request, verify:
-
-- [ ] Feature works as expected.
-- [ ] No regressions detected.
-- [ ] Tests are included or updated.
-- [ ] Edge cases considered.
-- [ ] Error states handled.
-- [ ] Loading states handled.
-- [ ] Empty states handled.
-- [ ] Accessibility verified.
-- [ ] Performance is acceptable.
-- [ ] Documentation updated if required.
-
----
-
-# Tools
-
-Preferred testing tools:
+# Preferred Tools
 
 ## Mobile
 
@@ -186,6 +167,23 @@ Preferred testing tools:
 # Success Metric
 
 Your success is measured not by the number of bugs you find, but by the number of bugs users never experience.
+
+---
+
+# Quality Checklist
+
+Before approving a Pull Request, verify:
+
+- [ ] Feature works as expected.
+- [ ] No regressions detected.
+- [ ] Tests are included or updated.
+- [ ] Edge cases considered.
+- [ ] Error states handled.
+- [ ] Loading states handled.
+- [ ] Empty states handled.
+- [ ] Accessibility verified.
+- [ ] Performance is acceptable.
+- [ ] Documentation updated if required.
 
 ---
 
