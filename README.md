@@ -106,15 +106,47 @@ We are currently building **Haru Haru**, a Korean learning platform designed to 
 ---
 
 ## Long-Term Vision
-
+ 
 Our goal is to build an ecosystem of connected products that improve the different pillars of everyday life.
-
+ 
 Products should work independently.
-
+ 
 Together, they should work even better.
-
+ 
 ---
-
+ 
+## Running Haru Haru Locally
+ 
+The Haru Haru app lives in `apps/haru-haru` and uses Expo with TypeScript.
+ 
+1. Install Node.js 24.x (recommended).
+2. Change into the app directory:
+   ```bash
+   cd apps/haru-haru
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the local development server:
+   ```bash
+   npm start
+   ```
+5. Run the app on a simulator or device:
+   ```bash
+   npm run android
+   npm run ios
+   npm run web
+   ```
+6. Run validation checks:
+   ```bash
+   npm test -- --runInBand
+   npx eslint . --ext .ts,.tsx
+   npx tsc --noEmit
+   ```
+ 
+---
+ 
 ## Documentation
 
 The repository now includes a more complete documentation set for contributors and maintainers.

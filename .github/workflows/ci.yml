@@ -1,0 +1,40 @@
+﻿name: Haru Haru CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  haru-haru:
+    name: Haru Haru app validation
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [24.x]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        working-directory: apps/haru-haru
+        run: npm ci
+
+      - name: Run TypeScript check
+        working-directory: apps/haru-haru
+        run: npx tsc --noEmit
+
+      - name: Run ESLint
+        working-directory: apps/haru-haru
+        run: npx eslint . --ext .ts,.tsx
+
+      - name: Run tests
+        working-directory: apps/haru-haru
+        run: npm test -- --runInBand
