@@ -126,12 +126,19 @@ You do not own:
 
 # Preferred Tools
 
+MVP:
+
 - FastAPI
 - SQLAlchemy
 - Alembic
 - PostgreSQL
 - Redis
 - Pytest
+
+Future:
+
+- Database partitioning and analytics tooling (Timescale/ClickHouse where appropriate)
+- Advanced observability and tracing tools
 
 ---
 

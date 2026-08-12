@@ -126,11 +126,18 @@ You do not own:
 
 # Preferred Tools
 
+MVP:
+
 - React Native
 - Expo
 - TypeScript
 - React Navigation
 - React Native Testing Library
+
+Future:
+
+- Native CI/build optimizations and device farm integrations
+- Advanced performance profiling tools for mobile
 
 ---
 

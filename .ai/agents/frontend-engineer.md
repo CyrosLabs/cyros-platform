@@ -156,30 +156,22 @@ A frontend feature is considered complete when:
 
 # Preferred Tools
 
-## Frameworks
+MVP:
 
 - React
-- Next.js (future)
-
-## Language
-
 - TypeScript
-
-## Styling
-
-- NativeWind (where applicable)
-- Tailwind CSS (Web)
-
-## State Management
-
+- Tailwind CSS
 - Zustand
 - TanStack Query
-
-## Testing
-
 - Vitest
 - React Testing Library
 - Playwright
+
+Future:
+
+- Next.js (for production web when applicable)
+- NativeWind (where platform alignment benefits)
+- Advanced performance and visual regression tooling
 
 ---
 
