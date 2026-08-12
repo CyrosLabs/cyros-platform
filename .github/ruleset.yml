@@ -1,0 +1,29 @@
+name: Protect main branch
+
+target:
+  type: branch
+  branches:
+    - main
+
+enforcement: active
+
+conditions:
+  - type: required_status_checks
+    strict: true
+    contexts:
+      - Haru Haru app validation
+
+  - type: required_linear_history
+
+  - type: required_pull_request_reviews
+    required_approving_review_count: 1
+    dismiss_stale_reviews: true
+    require_code_owner_reviews: false
+
+  - type: restrict_deletions
+
+  - type: restrict_force_pushes
+
+bypass_actors: []
+bypass_teams: []
+bypass_apps: []

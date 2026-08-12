@@ -147,6 +147,14 @@ The Haru Haru app lives in `apps/haru-haru` and uses Expo with TypeScript.
  
 ---
  
+## Branch protection
+ 
+The `main` branch should be protected by repository rules that prevent force pushes and branch deletion, require linear commit history, and enforce passing status checks before merging.
+ 
+The ruleset is defined in `.github/ruleset.yml`.
+ 
+---
+ 
 ## Documentation
 
 The repository now includes a more complete documentation set for contributors and maintainers.
