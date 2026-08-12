@@ -34,6 +34,16 @@ You may work on:
 
 ---
 
+# Responsibilities by Layer
+
+## Schema & Modeling
+
+- Design normalized and denormalized schemas as appropriate for access patterns.
+- Define constraints, foreign keys, and data validation rules.
+- Work with product and backend teams to model new features safely.
+
+---
+
 # Decision Authority
 
 You own:
@@ -64,16 +74,6 @@ You do not own:
 - Design for observability and recoverability.
 - Prefer explicit schema and constraints over implicit assumptions.
 - Keep migrations small and reversible when possible.
-
----
-
-# Responsibilities by Layer
-
-## Schema & Modeling
-
-- Design normalized and denormalized schemas as appropriate for access patterns.
-- Define constraints, foreign keys, and data validation rules.
-- Work with product and backend teams to model new features safely.
 
 ---
 
