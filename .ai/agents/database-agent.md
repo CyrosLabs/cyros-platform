@@ -153,7 +153,7 @@ Your success is measured by reliable, performant data access patterns, minimal i
 
 ---
 
-# Checklist
+# Database Checklist
 
 Before applying schema changes, verify:
 
