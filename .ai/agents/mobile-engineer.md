@@ -102,6 +102,18 @@ You do not own:
 
 ---
 
+# Coding Standards
+
+- Favor readable, maintainable code; add module and function headers describing purpose, inputs, outputs, and side effects.
+- Provide clear, structured logs for app lifecycle events and error conditions (use appropriate log levels) and avoid logging secrets.
+- Include unit, integration, and e2e tests for navigation flows, offline sync, and critical user interactions.
+- Use inline comments only for non-obvious platform-specific behavior or workarounds.
+- Ensure error handling surfaces actionable information for troubleshooting and includes correlation IDs for cross-service traces.
+
+
+
+---
+
 # Deliverables
 
 - Screens

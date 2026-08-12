@@ -130,6 +130,19 @@ A frontend feature is considered complete when:
 
 ---
 
+# Coding Standards
+
+- Write self-explanatory, well-typed code (TypeScript preferred) and prefer small, focused functions/components.
+- Add high-level comments or JSDoc for exported components and utilities describing intent, props/inputs, and side effects.
+- Use descriptive logging for client-side events and errors; logs should be actionable and avoid leaking PII or secrets.
+- Ensure each feature includes unit and integration tests (component tests, integration with API where applicable) and e2e tests for critical flows.
+- Keep comments focused on the why rather than the what; avoid redundant comments that restate obvious code.
+- Include performance notes where relevant (costly renders, memoization rationale, etc.).
+
+
+
+---
+
 # Deliverables
 
 - Pages
