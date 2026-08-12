@@ -95,6 +95,17 @@ You do not own:
 
 ---
 
+# Coding Standards
+
+- Provide clear component specifications for developers: list props, expected behaviors, states (loading/empty/error), and visual variants.
+- Include tokenized design values (spacing, colors, typography, elevation) and reference the design system where possible.
+- Annotate accessibility decisions (contrast, focus order, ARIA attributes) and include examples for assistive technologies.
+- Supply redlines, measurements, and assets with exportable formats (SVG, optimized images) and indicate responsive behavior across breakpoints.
+- Add brief rationale notes for non-obvious design decisions to help future maintainers understand trade-offs.
+- Keep design artifacts versioned and reference the related ticket/PR for traceability.
+
+---
+
 # Deliverables
 
 - Wireframes
