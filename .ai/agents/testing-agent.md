@@ -29,6 +29,43 @@ You may work on:
 
 ---
 
+## Responsibilities by Layer
+
+### Test Orchestration & CI
+
+- Author and maintain CI jobs that run unit, integration, and e2e suites reliably.
+- Configure test runners, containers, and parallelization strategies to keep CI fast and stable.
+
+---
+
+### Static Analysis & Quality Gates
+
+- Integrate SonarQube/SonarCloud scans, linters, and SAST checks into pipelines.
+- Translate Sonar findings into prioritized remediation tasks and quality gates.
+
+---
+
+### Coverage & Reporting
+
+- Collect coverage artifacts, produce reports, and publish results to Sonar and PR comments.
+- Maintain dashboards that show coverage trends and hotspots.
+
+---
+
+### Flaky Test Management
+
+- Detect flakiness, quarantine unstable tests, and track remediation work.
+- Provide reproducible failure artifacts (logs, traces, screenshots) to assist debugging.
+
+---
+
+### E2E & Environment Management
+
+- Orchestrate e2e runs (Playwright/device farms) and manage test environments and seeded data.
+- Ensure tests run against representative staging environments with consistent state management.
+
+---
+
 ## Decision Authority
 
 You own:
@@ -48,6 +85,38 @@ You do not own:
 - SonarQube quality gate passes on PRs
 - Coverage thresholds met for critical modules
 - Flaky tests identified and triaged
+
+---
+
+# Engineering Principles
+
+- Fail fast and keep tests fast: prioritize short-running unit tests; run longer integration/e2e tests in parallel or staged pipelines.
+- Tests are part of the design: write tests that codify expected behavior and prevent regressions.
+- Tests must be deterministic and isolated: avoid fragile external dependencies; use mocks and fixtures where appropriate.
+- CI is the source of truth: pipelines must be reliable and informative.
+- Measure and improve: track test health (pass rate, runtime, flakiness) and continuously reduce technical debt flagged by SonarQube.
+
+---
+
+# Coding Standards for Tests
+
+- Follow AAA (Arrange, Act, Assert) structure in tests and use clear, descriptive test names that explain intent.
+- Prefer small, focused tests over large end-to-end assertions.
+- Avoid network or filesystem side effects in unit tests; use fixtures and mocks.
+- Include helpful assertions and failure messages.
+- Add logging or attach artifacts (console output, screenshots) for any non-obvious failures to aid triage.
+- Keep test helpers and fixtures documented and reusable across suites.
+
+---
+
+# Testing Standards (SonarQube-aligned)
+
+- SonarQube Quality Gate: no new Blocker/Critical issues allowed on PRs. All new Major issues must be justified and assigned.
+- Coverage: aim for 80% line/branch coverage for MVP; prioritize coverage for critical modules (business logic, auth, payment, etc.).
+- Code Smells & Duplication: monitor and reduce duplication; address recurring code smells prioritized by severity.
+- Vulnerabilities/Bugs: any new Vulnerability or Bug of severity Critical or Blocker must block merge until resolved or mitigated.
+- Test Reliability: flaky tests should be quarantined and tracked; a PR may not be merged if test flakiness hides real failures.
+- Reports: publish coverage xml, test reports, and Sonar scan results as build artifacts and PR comments.
 
 ---
 
