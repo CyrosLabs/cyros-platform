@@ -1,79 +1,113 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - main
-      - develop
-  pull_request:
-    branches:
-      - main
-      - develop
-  workflow_dispatch:
+push:
+branches:
+- main
+- develop
+pull_request:
+branches:
+- main
+- develop
+workflow_dispatch:
 
 jobs:
-  validate-docs:
-    name: Validate documentation
-    runs-on: ubuntu-latest
+validate-docs:
+name: Validate documentation
+runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
+  - name: Set up Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: '24'
 
-      - name: Install documentation tooling
-        run: |
-          npm install -g markdownlint-cli@0.34.0 yaml-lint@1.7.0
+  - name: Install documentation tooling
+    run: |
+      npm install -g markdownlint-cli@0.34.0 yaml-lint@1.7.0
 
-      - name: Validate Markdown
-        run: |
-          find . \
-            -name '*.md' \
-            -not -path './.git/*' \
-            -not -path './node_modules/*' \
-            -print0 |
-            xargs -0 -n1 markdownlint
+  - name: Determine changed files
+    id: changed-files
+    shell: bash
+    run: |
+      if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+        git diff --name-only \
+          "origin/${{ github.base_ref }}...${{ github.sha }}" \
+          > changed-files.txt
+      elif [[ "${{ github.event_name }}" == "push" ]]; then
+        if [[ "${{ github.event.before }}" == "0000000000000000000000000000000000000000" ]]; then
+          git ls-files > changed-files.txt
+        else
+          git diff --name-only \
+            "${{ github.event.before }}" "${{ github.sha }}" \
+            > changed-files.txt
+        fi
+      else
+        git ls-files > changed-files.txt
+      fi
 
-      - name: Validate YAML
-        run: |
-          find . \
-            -type f \
-            \( -name '*.yml' -o -name '*.yaml' \) \
-            -not -path './.git/*' \
-            -print0 |
-            xargs -0 -n1 yaml-lint
+  - name: Validate changed Markdown
+    shell: bash
+    run: |
+      mapfile -t markdown_files < <(
+        grep -E '\.md$' changed-files.txt || true
+      )
 
-  haru-haru:
-    name: Haru Haru validation
-    runs-on: ubuntu-latest
+      if [ "${#markdown_files[@]}" -eq 0 ]; then
+        echo "No Markdown files changed."
+        exit 0
+      fi
 
-    defaults:
-      run:
-        working-directory: apps/haru-haru
+      printf '%s\0' "${markdown_files[@]}" |
+        xargs -0 markdownlint
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+  - name: Validate changed YAML
+    shell: bash
+    run: |
+      mapfile -t yaml_files < <(
+        grep -E '\.(yml|yaml)$' changed-files.txt || true
+      )
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-          cache: npm
-          cache-dependency-path: apps/haru-haru/package-lock.json
+      if [ "${#yaml_files[@]}" -eq 0 ]; then
+        echo "No YAML files changed."
+        exit 0
+      fi
 
-      - name: Install dependencies
-        run: npm ci
+      printf '%s\0' "${yaml_files[@]}" |
+        xargs -0 yaml-lint
 
-      - name: Lint
-        run: npm run lint
+haru-haru:
+name: Haru Haru validation
+runs-on: ubuntu-latest
 
-      - name: Type check
-        run: npx tsc --noEmit
+defaults:
+  run:
+    working-directory: apps/haru-haru
 
-      - name: Test
-        run: npm test -- --runInBand
+steps:
+  - name: Checkout repository
+    uses: actions/checkout@v4
+
+  - name: Set up Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: '24'
+      cache: npm
+      cache-dependency-path: apps/haru-haru/package-lock.json
+
+  - name: Install dependencies
+    run: npm ci
+
+  - name: Lint
+    run: npm run lint
+
+  - name: Type check
+    run: npx tsc --noEmit
+
+  - name: Test
+    run: npm test -- --runInBand

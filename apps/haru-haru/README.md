@@ -6,7 +6,7 @@ Haru Haru is a Korean learning platform designed to make language learning engag
 
 It is the current primary product being developed by Cyros Labs.
 
-Haru Haru is intentionally built as a product within the Cyros Labs platform architecture: the application owns its learning experience and product-specific behavior while reusable capabilities are provided by the shared platform and libraries.
+Haru Haru is built as a product within the Cyros Labs platform architecture. The application owns its learning experience and product-specific behavior, while reusable capabilities are provided by the shared Platform and Packages.
 
 ---
 
@@ -96,7 +96,7 @@ apps/haru-haru/
 └── tsconfig.json
 ```
 
-The `src/features` area contains product features, while shared presentation concerns such as theming live separately. The current repository contains the `home` feature and a dedicated `theme` area.
+The `src/features` area contains product features, while shared presentation concerns such as theming live separately.
 
 As the product grows, new functionality should normally be organized around product features rather than around technical layers alone.
 
@@ -120,7 +120,7 @@ The exact structure should follow the architecture and boundaries established by
 
 Learning content is treated separately from application logic.
 
-Content may include things such as:
+Content may include:
 
 * Korean learning material
 * Lessons
@@ -131,7 +131,7 @@ Content may include things such as:
 
 Content should remain independently maintainable whenever practical and should not become tightly coupled to UI implementation.
 
-The repository's shared `content/haru-haru` area is the appropriate location for product content that is maintained independently from application code.
+Product learning content that is maintained independently from application code belongs in the repository's `content/haru-haru` area.
 
 ---
 
@@ -141,7 +141,7 @@ The repository's shared `content/haru-haru` area is the appropriate location for
 
 * Node.js 24.x
 
-### Install
+### Install Dependencies
 
 From the Haru Haru directory:
 
@@ -150,13 +150,13 @@ cd apps/haru-haru
 npm install
 ```
 
-### Start Development
+### Start the Development Server
 
 ```bash
 npm start
 ```
 
-### Run on a Platform
+### Run on a Specific Platform
 
 ```bash
 npm run android
@@ -164,17 +164,9 @@ npm run ios
 npm run web
 ```
 
-The application currently uses Expo's development tooling and provides scripts for Android, iOS, and web.
-
 ---
 
 ## Validation
-
-Run the test suite:
-
-```bash
-npm test -- --runInBand
-```
 
 Run linting:
 
@@ -188,13 +180,19 @@ Run TypeScript validation:
 npx tsc --noEmit
 ```
 
-The application package currently defines Jest and ESLint scripts and uses TypeScript for the application code.
+Run tests:
+
+```bash
+npm test -- --runInBand
+```
+
+For the complete development workflow, see the repository documentation for [Getting Started](../../docs/development/getting-started.md), [Local Environment](../../docs/development/local-environment.md), and [Testing](../../docs/engineering/testing.md).
 
 ---
 
 ## Engineering Guidelines
 
-Haru Haru follows the engineering principles of the Cyros Labs repository.
+Haru Haru follows the engineering principles of Cyros Labs.
 
 ### Product First
 
@@ -218,7 +216,7 @@ Use the simplest design that satisfies the current product requirements.
 
 ### AI Native
 
-AI-assisted development is part of the engineering workflow. Repository-level AI rules and workflows in `.ai/` apply to Haru Haru.
+AI-assisted development is part of the engineering workflow. Repository-level AI instructions, rules, workflows, and agents apply to Haru Haru.
 
 ---
 
@@ -237,6 +235,7 @@ AI-assisted development is part of the engineering workflow. Repository-level AI
 
 * [Getting Started](../../docs/development/getting-started.md)
 * [Local Environment](../../docs/development/local-environment.md)
+* [Docker](../../docs/development/docker.md)
 * [Tooling](../../docs/development/tooling.md)
 * [Debugging](../../docs/development/debugging.md)
 * [Troubleshooting](../../docs/development/troubleshooting.md)

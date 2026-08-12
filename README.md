@@ -30,9 +30,7 @@ To create thoughtful technology that helps people learn, grow, connect, and thri
 
 ---
 
-## Products
-
-Cyros Labs develops products across different areas of everyday life.
+## Our Pillars
 
 ### 🧠 Mind
 
@@ -72,51 +70,36 @@ Cyros Labs develops products across different areas of everyday life.
 
 * Race Game
 
-The repository may contain products at different stages of development. The current primary product under active development is **Haru Haru**.
-
 ---
 
 ## Architecture
 
 Cyros Labs follows a **platform-first architecture**.
 
-Products own their user experiences and product-specific business flows.
+Products focus on user experiences and product-specific business flows.
 
-The Platform provides reusable capabilities that should not be independently reimplemented by each product.
+The Platform provides reusable capabilities shared across products.
 
-Shared Packages provide generic technical functionality that can be reused by products and platform services.
+Shared Packages provide reusable technical functionality.
 
 Content is maintained independently from application logic.
 
-Infrastructure provides the deployment and operational foundation for the system.
+Infrastructure provides the deployment and operational foundation.
 
-The goal is to keep products independently evolvable while allowing them to share a common technological foundation.
+This separation allows products to evolve independently while sharing a common technological foundation.
 
 ```mermaid
 flowchart TD
     A[Cyros Labs] --> B[Platform]
     A --> C[Product Apps]
-
     B --> C
     B --> D[Shared Packages]
-
     C --> E[Content]
-
     B --> F[Infrastructure]
     C --> F
 ```
 
-The key architectural boundaries are:
-
-* **Products** own product-specific experiences, rules, and business flows.
-* **Platform** owns shared product capabilities.
-* **Shared Packages** provide generic reusable technical functionality.
-* **Content** contains product content independent from application logic.
-* **Infrastructure** provides deployment and operational capabilities.
-
-Products should not depend directly on other products. Shared capabilities should be provided through the Platform or appropriate Shared Packages.
-
-See the [Architecture Documentation](docs/architecture/overview.md) for the complete architectural model.
+See the [Architecture Overview](docs/architecture/overview.md) for the complete architectural model.
 
 ---
 
@@ -131,11 +114,11 @@ docs/             Project documentation
 .ai/              AI agents, workflows, rules, and context
 docker/           Local development environment
 infrastructure/   Infrastructure and deployment
-scripts/           Automation scripts
+scripts/          Automation scripts
 tools/             Development and engineering tools
 ```
 
-For the detailed repository structure, see [Repository Structure](docs/architecture/repository-structure.md).
+For more detail, see the [Repository Structure](docs/architecture/repository-structure.md).
 
 ---
 
@@ -149,23 +132,21 @@ For the detailed repository structure, see [Repository Structure](docs/architect
 * Simplicity Over Complexity
 * Build for the Long Term
 
-These principles guide both product development and engineering decisions across the repository.
-
 ---
 
 ## Current Focus
 
-Cyros Labs is currently focused on **Haru Haru**, a Korean learning platform designed to make language learning engaging, meaningful, and confidence-building.
+We are currently building **Haru Haru**, a Korean learning platform designed to make language learning engaging, meaningful, and confidence-building.
 
 The application lives in [`apps/haru-haru`](apps/haru-haru).
 
-See the [Haru Haru README](apps/haru-haru/README.md) for product and development-specific information.
+See the [Haru Haru README](apps/haru-haru/README.md) for product-specific information and development instructions.
 
 ---
 
 ## Development
 
-The repository is a multi-area codebase. Development instructions are organized by concern rather than duplicated across individual projects.
+The repository is a multi-area codebase. Development documentation is organized by concern rather than duplicated across individual projects.
 
 ### Core Documentation
 
@@ -177,7 +158,7 @@ The repository is a multi-area codebase. Development instructions are organized 
 * [Troubleshooting](docs/development/troubleshooting.md)
 * [FAQ](docs/development/faq.md)
 
-### Architecture
+### Architecture Documentation
 
 * [Architecture Overview](docs/architecture/overview.md)
 * [Platform Architecture](docs/architecture/platform.md)
@@ -192,12 +173,12 @@ The repository is a multi-area codebase. Development instructions are organized 
 * [Scalability](docs/architecture/scalability.md)
 * [Decision Principles](docs/architecture/decision-principles.md)
 
-### Engineering
+### Engineering Documentation
 
 * [Testing](docs/engineering/testing.md)
 * [Release Process](docs/engineering/release-process.md)
 
-### Project
+### Project Documentation
 
 * [Contributing](CONTRIBUTING.md)
 * [Glossary](docs/GLOSSARY.md)
@@ -220,7 +201,7 @@ The `.ai/` directory contains the project's AI engineering system:
 
 AI agents should follow the repository's architectural, coding, security, and workflow rules when modifying the project.
 
-The AI system complements the project documentation rather than replacing it.
+The AI system is designed to work alongside the project's documentation rather than duplicate it.
 
 ---
 
@@ -238,9 +219,9 @@ See [Contributing](CONTRIBUTING.md) for development and contribution guidelines.
 
 ## Long-Term Vision
 
-Cyros Labs aims to build an ecosystem of connected products that improve different pillars of everyday life.
+Our goal is to build an ecosystem of connected products that improve different pillars of everyday life.
 
-Each product should be useful and evolvable on its own.
+Products should be useful and evolvable independently.
 
 Together, shared platform capabilities can allow products to provide more value without creating direct product-to-product coupling.
 
