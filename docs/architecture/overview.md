@@ -1,21 +1,18 @@
-# Architecture Guide
+# Architecture Overview
 
-This document summarizes the architectural approach used across Cyros Labs.
+Cyros Labs follows a platform-first architecture.
 
-It is intentionally aligned with the repository-wide architecture documents in `docs/architecture/overview.md` and `docs/architecture/platform.md`.
+Products focus on user experience and product-specific business flows.
 
----
+The Platform provides reusable capabilities shared across products.
 
-## Architectural Principles
+Shared Packages provide reusable technical functionality.
 
-Cyros Labs follows a platform-first model:
+Content is maintained independently from application logic.
 
-- Products focus on user experience and product-specific business flows.
-- The platform provides reusable capabilities shared across products.
-- Shared packages reduce duplication and provide reusable technical functionality.
-- Content is treated as independent from application logic.
-- Products should remain loosely coupled from shared infrastructure.
-- Products should be able to evolve independently while sharing a common technological foundation.
+Infrastructure provides the deployment and operational foundation.
+
+This separation allows products to evolve independently while sharing a common technological foundation.
 
 ---
 
@@ -30,124 +27,51 @@ flowchart TD
     B --> F[Infrastructure]
 ````
 
-At a high level, the repository is organized around these responsibilities:
+At a high level:
 
-* **Company / Product Vision** — Defines the mission, roadmap, and product direction.
-* **Platform** — Provides shared capabilities used across products.
-* **Product Apps** — Own product-specific experiences and business flows.
-* **Shared Packages** — Provide reusable technical functionality.
-* **Content** — Contains product content maintained independently from application logic.
-* **Infrastructure** — Provides deployment and operational foundations.
-
----
-
-## Layered Responsibilities
-
-### Company
-
-The company layer defines the mission, roadmap, and product direction. These concerns are captured in the documentation under `docs/company`.
-
-### Platform
-
-The platform layer owns capabilities that should not be reimplemented by every product.
-
-Examples include:
-
-* Identity
-* Messaging
-* Analytics
-* Payments
-* Search
-* Storage
-* Gamification
-* Monitoring
-
-The platform should remain product-agnostic and provide reusable capabilities through well-defined interfaces.
-
-### Products
-
-Product applications live in `apps`.
-
-Each product should focus on:
-
-* User experience
-* Product-specific business flows
-* Product-specific rules
-* Product-specific orchestration
-
-Products should consume shared platform capabilities rather than independently implementing capabilities that belong to the platform.
-
-### Shared Packages
-
-Reusable libraries live in `packages`.
-
-Packages should contain functionality that can be consumed by more than one product or platform service.
-
-Packages should remain generic and should not contain product-specific business logic.
-
-### Content
-
-Content is maintained separately from application logic.
-
-Product content should not be tightly coupled to application implementation when it can be represented independently.
-
-### Infrastructure
-
-Infrastructure provides the deployment and operational foundation for the platform and products.
-
-Infrastructure concerns are described in `docker`, `infrastructure`, and `docs/architecture/deployment.md`.
-
-Infrastructure implementation details should not leak unnecessarily into product business logic.
+* **Company / Product Vision** defines the mission, roadmap, and product direction.
+* **Platform** provides capabilities shared across products.
+* **Product Apps** own product-specific experiences and business flows.
+* **Shared Packages** provide reusable technical functionality.
+* **Content** contains product content independently from application logic.
+* **Infrastructure** provides deployment and operational foundations.
 
 ---
 
-## Boundaries
+## Architectural Principles
 
-The repository guidance expects clear boundaries between layers:
-
-* Products consume platform capabilities rather than implementing their own shared infrastructure.
-* The platform must remain independent from individual products.
-* Shared packages should remain generic and reusable.
-* Content should remain independent from application logic.
-* Product-specific rules should not leak into the platform layer.
-* Infrastructure concerns should not become embedded in product business logic.
-* Dependencies should flow toward shared capabilities rather than creating circular ownership.
+* Human First
+* Platform First
+* AI Native
+* Modular by Design
+* Reuse Before Rebuild
+* Simplicity Over Complexity
+* Build for the Long Term
 
 ---
 
-## Design and Delivery Guidance
+## Architectural Boundaries
 
-The architecture is intended to support:
+* Products consume platform capabilities rather than reimplementing shared infrastructure.
+* The Platform remains independent from individual products.
+* Shared Packages remain generic and reusable.
+* Product-specific business rules do not leak into the Platform.
+* Content remains independent from application logic.
+* Infrastructure concerns should not leak unnecessarily into product business logic.
 
-* Independent product delivery
-* Shared platform evolution
-* Reuse across products
-* Consistent deployment and operational practices
-* Clear ownership of capabilities
-* Long-term scalability without unnecessary coupling
-
-Before introducing a new capability, determine whether it belongs to:
-
-* A product
-* The platform
-* A shared package
-* Content
-* Infrastructure
-
-Prefer reusing an existing capability over creating a parallel implementation.
-
-These goals are reflected in the monorepo strategy documented in `docs/architecture/monorepo.md`.
+For detailed ownership rules, see `platform-boundaries.md`.
 
 ---
 
 ## Related Documents
 
-* `docs/architecture/overview.md`
-* `docs/architecture/platform.md`
-* `docs/architecture/platform-boundaries.md`
-* `docs/architecture/repository-structure.md`
-* `docs/architecture/deployment.md`
-* `docs/architecture/security.md`
-* `docs/architecture/monorepo.md`
+* `platform.md`
+* `platform-boundaries.md`
+* `repository-structure.md`
+* `monorepo.md`
+* `system-design.md`
+* `tech-stack.md`
+* `deployment.md`
+* `security.md`
 
-```
+````

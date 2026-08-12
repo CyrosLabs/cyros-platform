@@ -1,3 +1,4 @@
+
 # Cyros Labs
 
 > We build technology that helps people thrive.
@@ -10,7 +11,7 @@ It should reduce stress, encourage growth, create opportunities, and help people
 
 Every product begins with a single question:
 
-> **"Will this genuinely improve someone's life?"**
+> "Will this genuinely improve someone's life?"
 
 If the answer is no, we don't build it.
 
@@ -72,30 +73,63 @@ To create thoughtful technology that helps people learn, grow, connect, and thri
 
 ---
 
+## Architecture
+
+Cyros Labs follows a **platform-first architecture**.
+
+Products focus on user experiences and product-specific business flows.
+
+The Platform provides reusable capabilities shared across products.
+
+Shared Packages provide reusable technical functionality.
+
+Content is maintained independently from application logic.
+
+Infrastructure provides the deployment and operational foundation.
+
+This separation allows products to evolve independently while sharing a common technological foundation.
+
+```mermaid
+flowchart TD
+    A[Company / Product Vision] --> B[Platform]
+    B --> C[Product Apps]
+    B --> D[Shared Packages]
+    C --> E[Content]
+    B --> F[Infrastructure]
+````
+
+See the [Architecture Documentation](docs/architecture/overview.md) for the complete architectural model.
+
+---
+
 ## Repository Structure
 
 ```text
-apps/            Product applications
-platform/        Shared platform capabilities
-packages/        Shared libraries
-content/         Product content
-docs/            Documentation
-.ai/             AI agents and engineering rules
-docker/          Local development environment
-scripts/         Automation scripts
+apps/             Product applications
+platform/         Shared platform capabilities
+packages/         Shared libraries
+content/          Product content
+docs/             Project documentation
+.ai/              AI agents, workflows, rules, and context
+docker/           Local development environment
+infrastructure/   Infrastructure and deployment
+scripts/           Automation scripts
+tools/             Development and engineering tools
 ```
+
+For more detail, see the [Repository Structure](docs/architecture/repository-structure.md).
 
 ---
 
 ## Engineering Principles
 
-- Human First
-- Platform First
-- AI Native
-- Modular by Design
-- Reuse Before Rebuild
-- Simplicity Over Complexity
-- Build for the Long Term
+* Human First
+* Platform First
+* AI Native
+* Modular by Design
+* Reuse Before Rebuild
+* Simplicity Over Complexity
+* Build for the Long Term
 
 ---
 
@@ -103,83 +137,131 @@ scripts/         Automation scripts
 
 We are currently building **Haru Haru**, a Korean learning platform designed to make language learning engaging, meaningful, and confidence-building.
 
+The application lives in `apps/haru-haru` and uses Expo with TypeScript.
+
+---
+
+## Development
+
+### Prerequisites
+
+* Node.js 24.x
+
+### Run Haru Haru Locally
+
+```bash
+cd apps/haru-haru
+npm install
+npm start
+```
+
+Run on a specific platform:
+
+```bash
+npm run android
+npm run ios
+npm run web
+```
+
+### Validation
+
+```bash
+npm test -- --runInBand
+npx eslint . --ext .ts,.tsx
+npx tsc --noEmit
+```
+
+For complete development documentation, see:
+
+* [Getting Started](docs/development/getting-started.md)
+* [Local Environment](docs/development/local-environment.md)
+* [Tooling](docs/development/tooling.md)
+* [Debugging](docs/development/debugging.md)
+* [Troubleshooting](docs/development/troubleshooting.md)
+* [FAQ](docs/development/faq.md)
+
+---
+
+## Documentation
+
+### Architecture
+
+* [Architecture Overview](docs/architecture/overview.md)
+* [Platform Architecture](docs/architecture/platform.md)
+* [Platform Boundaries](docs/architecture/platform-boundaries.md)
+* [Repository Structure](docs/architecture/repository-structure.md)
+* [Monorepo Strategy](docs/architecture/monorepo.md)
+* [System Design](docs/architecture/system-design.md)
+* [Technology Stack](docs/architecture/tech-stack.md)
+* [API Guidelines](docs/architecture/api-guidelines.md)
+* [Deployment](docs/architecture/deployment.md)
+* [Security](docs/architecture/security.md)
+* [Scalability](docs/architecture/scalability.md)
+* [Decision Principles](docs/architecture/decision-principles.md)
+
+### Development
+
+* [Getting Started](docs/development/getting-started.md)
+* [Local Environment](docs/development/local-environment.md)
+* [Docker](docs/development/docker.md)
+* [Tooling](docs/development/tooling.md)
+* [Architecture Walkthrough](docs/development/architecture-walkthrough.md)
+* [Debugging](docs/development/debugging.md)
+* [Troubleshooting](docs/development/troubleshooting.md)
+* [Environment Variables](docs/development/environment-variables.md)
+* [FAQ](docs/development/faq.md)
+
+### Engineering
+
+* [Testing](docs/engineering/testing.md)
+* [Release Process](docs/engineering/release-process.md)
+
+### Project
+
+* [Contributing](CONTRIBUTING.md)
+* [Glossary](docs/GLOSSARY.md)
+
+---
+
+## AI-Assisted Development
+
+Cyros is designed to support AI-assisted software development.
+
+The `.ai/` directory contains the project's AI engineering system:
+
+```text
+.ai/
+├── agents/       Specialized engineering agents
+├── workflows/    Standard development workflows
+├── rules/        Engineering and architectural rules
+└── context/      Project context and reference information
+```
+
+AI agents should follow the repository's architectural, coding, security, and workflow rules when modifying the project.
+
+The AI system is designed to work alongside the project's documentation rather than duplicate it.
+
+---
+
+## Git Workflow
+
+The `main` branch is protected by repository rules that prevent force pushes and branch deletion, require linear commit history, and enforce passing status checks before merging.
+
+The repository ruleset is defined in `.github/ruleset.yml`.
+
+Changes should be developed on dedicated branches and merged through pull requests.
+
+See [Contributing](CONTRIBUTING.md) for development and contribution guidelines.
+
 ---
 
 ## Long-Term Vision
- 
+
 Our goal is to build an ecosystem of connected products that improve the different pillars of everyday life.
- 
+
 Products should work independently.
- 
+
 Together, they should work even better.
- 
----
- 
-## Running Haru Haru Locally
- 
-The Haru Haru app lives in `apps/haru-haru` and uses Expo with TypeScript.
- 
-1. Install Node.js 24.x (recommended).
-2. Change into the app directory:
-   ```bash
-   cd apps/haru-haru
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the local development server:
-   ```bash
-   npm start
-   ```
-5. Run the app on a simulator or device:
-   ```bash
-   npm run android
-   npm run ios
-   npm run web
-   ```
-6. Run validation checks:
-   ```bash
-   npm test -- --runInBand
-   npx eslint . --ext .ts,.tsx
-   npx tsc --noEmit
-   ```
- 
----
- 
-## Branch protection
- 
-The `main` branch should be protected by repository rules that prevent force pushes and branch deletion, require linear commit history, and enforce passing status checks before merging.
- 
-The ruleset is defined in `.github/ruleset.yml`.
- 
----
- 
-## Documentation
-
-The repository now includes a more complete documentation set for contributors and maintainers.
-
-### Core Guides
-
-- [DEVELOPMENT.md](DEVELOPMENT.md)
-- [ARCHITECTURE.md](ARCHITECTURE.md)
-- [API.md](API.md)
-- [DATABASE.md](DATABASE.md)
-- [DEPLOYMENT.md](DEPLOYMENT.md)
-- [TESTING.md](TESTING.md)
-- [SECURITY.md](SECURITY.md)
-
-### Reference Documentation
-
-- [CONTRIBUTING.md](CONTRIBUTING.md)
-- [docs/development/getting-started.md](docs/development/getting-started.md)
-- [docs/development/local-environment.md](docs/development/local-environment.md)
-- [docs/development/architecture-walkthrough.md](docs/development/architecture-walkthrough.md)
-- [docs/development/debugging.md](docs/development/debugging.md)
-- [docs/development/troubleshooting.md](docs/development/troubleshooting.md)
-- [docs/development/faq.md](docs/development/faq.md)
-- [docs/architecture/PROJECT_STRUCTURE.md](docs/architecture/PROJECT_STRUCTURE.md)
-- [docs/GLOSSARY.md](docs/GLOSSARY.md)
 
 ---
 
