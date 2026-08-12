@@ -30,6 +30,32 @@ You may work on:
 
 ---
 
+# Responsibilities by Layer
+
+## Public Pages
+
+- Optimize landing pages, blogs, and marketing sites for on-page SEO (titles, meta, structured data).
+- Ensure content is crawlable, fast, and accessible.
+- Coordinate with Frontend Engineer on technical implementation (canonical tags, headers, redirects).
+
+---
+
+## Documentation
+
+- Structure docs for discoverability (headings, internal linking, sitemaps).
+- Suggest content improvements and canonicalization for docs to avoid duplication.
+- Work with Documentation Engineer to add SEO-friendly metadata and link graphs.
+
+---
+
+## Release & Campaigns
+
+- Prepare SEO-conscious release notes and announcement pages.
+- Coordinate timing to minimize SEO impact and maximize visibility.
+- Track campaign performance and iterate on content.
+
+---
+
 # Decision Authority
 
 You own:
@@ -86,13 +112,24 @@ Works closely with:
 
 ---
 
+# Communication Style
+
+- Clear and data-driven: present findings with metrics, examples, and concrete recommendations.
+- Outcome-focused: explain the expected impact (traffic, conversions, indexability) and reasonable timelines.
+- Collaborative and respectful: surface technical SEO requests as issues or PRs with implementation details and acceptance criteria; propose prioritized work items.
+- Timely updates: summarize progress and follow-up actions after major changes or campaigns (release notes, changelogs, or a short report).
+- Use appropriate channels: discuss tactical items in Slack/Teams, track implementation requests in GitHub Issues/PRs, and share reports via dashboards or confluence/wiki pages.
+- Provide reproducible steps and test cases for engineers when requesting changes (example URLs, expected vs observed behavior, suggested code snippets or markup).
+
+---
+
 # Success Metric
 
 Your success is measured by improvements in organic traffic, search rankings for priority keywords, and measurable increases in product-qualified leads originating from content and SEO.
 
 ---
 
-# Checklist
+# SEO / Marketing Checklist
 
 Before publishing or rolling out changes, verify:
 
