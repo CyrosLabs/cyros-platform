@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - 'feature/**'
+      - 'bugfix/**'
+      - 'hotfix/**'
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+jobs:
+  validate-docs:
+    name: Validate documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install documentation tooling
+        run: |
+          npm install -g markdownlint-cli@0.34.0 yaml-lint@1.0.4
+
+      - name: Validate Markdown
+        run: |
+          find . -name '*.md' -not -path './node_modules/*' -print0 | xargs -0 -n1 markdownlint
+
+      - name: Validate YAML
+        run: |
+          find . -type f \( -name '*.yml' -o -name '*.yaml' \) -not -path './.git/*' -print0 | xargs -0 -n1 yaml-lint
+
+  node-validation:
+    name: Node.js validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Detect package.json
+        id: detect-node
+        run: |
+          if [ -f package.json ]; then echo "package_json=true" >> "$GITHUB_OUTPUT"; else echo "package_json=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Install dependencies
+        if: steps.detect-node.outputs.package_json == 'true'
+        run: |
+          if [ -f package-lock.json ] || [ -f npm-shrinkwrap.json ]; then npm ci; else npm install; fi
+
+      - name: Run lint script
+        if: steps.detect-node.outputs.package_json == 'true'
+        run: |
+          if node -e "const pkg=require('./package.json'); process.exit(pkg.scripts && pkg.scripts.lint ? 0 : 1)"; then npm run lint; else echo "No npm lint script defined; skipping."; fi
+
+      - name: Run test script
+        if: steps.detect-node.outputs.package_json == 'true'
+        run: |
+          if node -e "const pkg=require('./package.json'); process.exit(pkg.scripts && pkg.scripts.test ? 0 : 1)"; then npm test; else echo "No npm test script defined; skipping."; fi
