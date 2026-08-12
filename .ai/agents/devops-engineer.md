@@ -112,6 +112,18 @@ An infrastructure change is considered complete when:
 
 ---
 
+# Coding Standards
+
+- Infrastructure-as-code and scripts should be clear, idempotent, and well-documented.
+- Add comments explaining non-obvious provisioning decisions and safety controls.
+- Ensure deployment scripts include clear logs and return meaningful exit codes for CI.
+- Avoid embedding secrets in code; rely on secrets management.
+- Include automated tests for CI pipelines where possible (linting, static checks, dry-run validations).
+
+
+
+---
+
 # Deliverables
 
 - CI/CD Pipelines
