@@ -1,0 +1,56 @@
+# Default owner for the repository
+* @CyrosLabs
+
+# ─────────────────────────────────────────────
+# Applications
+# ─────────────────────────────────────────────
+
+/apps/haru-haru/ @CyrosLabs
+
+# ─────────────────────────────────────────────
+# Platform
+# ─────────────────────────────────────────────
+
+/platform/ @CyrosLabs
+
+# ─────────────────────────────────────────────
+# Shared libraries
+# ─────────────────────────────────────────────
+
+/packages/ @CyrosLabs
+
+# ─────────────────────────────────────────────
+# Product content
+# ─────────────────────────────────────────────
+
+/content/ @CyrosLabs
+
+# ─────────────────────────────────────────────
+# Infrastructure and operations
+# ─────────────────────────────────────────────
+
+/infrastructure/ @CyrosLabs
+/docker/ @CyrosLabs
+/scripts/ @CyrosLabs
+/tools/ @CyrosLabs
+
+# ─────────────────────────────────────────────
+# Architecture and engineering standards
+# ─────────────────────────────────────────────
+
+/docs/architecture/ @CyrosLabs
+/docs/engineering/ @CyrosLabs
+CONTRIBUTING.md @CyrosLabs
+README.md @CyrosLabs
+
+# ─────────────────────────────────────────────
+# AI engineering system
+# ─────────────────────────────────────────────
+
+/.ai/ @CyrosLabs
+
+# ─────────────────────────────────────────────
+# Repository governance and security
+# ─────────────────────────────────────────────
+
+/.github/ @CyrosLabs

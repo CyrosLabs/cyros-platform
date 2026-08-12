@@ -1,55 +1,65 @@
-name: Security scan
+name: Security
 
 on:
   push:
     branches:
       - main
       - develop
-      - 'feature/**'
-      - 'bugfix/**'
-      - 'hotfix/**'
   pull_request:
     branches:
       - main
       - develop
   workflow_dispatch:
 
+permissions:
+  contents: read
+  security-events: write
+  pull-requests: read
+
 jobs:
   codeql:
     name: CodeQL analysis
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@v4
         with:
-          languages:
-            - python
-            - javascript
+          languages: javascript-typescript
 
       - name: Perform CodeQL analysis
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@v4
 
   dependency-review:
     name: Dependency review
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Review dependencies
-        uses: github/dependency-review-action@v3
+        uses: actions/dependency-review-action@v4
 
   secret-scan:
-    name: Secret scanning
+    name: Secret detection
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Scan repository for secrets
-        uses: zricethezav/gitleaks-action@v4
         with:
-          scan_path: .
+          fetch-depth: 0
+
+      - name: Run Gitleaks
+        uses: step-security/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
