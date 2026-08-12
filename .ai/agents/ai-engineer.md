@@ -121,11 +121,17 @@ You do not own:
 
 # Preferred Tools
 
-- OpenAI
-- Ollama
+MVP:
+
+- OpenAI (or managed model provider)
 - LangChain
-- LlamaIndex
 - FastAPI
+
+Future:
+
+- Ollama / local model runtimes
+- LlamaIndex or other indexing libraries for advanced RAG patterns
+- MLOps orchestration and experiment tracking tools
 
 ---
 

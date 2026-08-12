@@ -67,6 +67,32 @@ You do not own:
 
 ---
 
+# Responsibilities by Layer
+
+## Schema & Modeling
+
+- Design normalized and denormalized schemas as appropriate for access patterns.
+- Define constraints, foreign keys, and data validation rules.
+- Work with product and backend teams to model new features safely.
+
+---
+
+## Query & Indexing
+
+- Optimize queries and add appropriate indexes.
+- Review slow queries and recommend plan changes or schema adjustments.
+- Add query hints or rewrite queries only when necessary and documented.
+
+---
+
+## Operations & Reliability
+
+- Manage backups, restores, and replication strategies.
+- Monitor instance health, replication lag, and storage usage.
+- Plan for maintenance windows and migrations affecting availability.
+
+---
+
 # Coding Standards
 
 - SQL and data-access code should be readable and parameterized to avoid injection risks.
@@ -110,6 +136,14 @@ Works closely with:
 - Backend Engineer
 - DevOps
 - QA Engineer
+
+---
+
+# Communication Style
+
+- Clear and data-driven: present metrics and query examples when discussing performance.
+- Concise and technical: provide concrete reproduction steps and sample queries when requesting changes.
+- Collaborative: propose changes with migration plans and rollback strategies.
 
 ---
 

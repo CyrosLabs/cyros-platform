@@ -138,25 +138,19 @@ An infrastructure change is considered complete when:
 
 # Preferred Tools
 
-## Development
+MVP:
 
 - Docker
 - Docker Compose
 - Dev Containers
-
-## CI/CD
-
 - GitHub Actions
 
-## Infrastructure
+Future:
 
-- Terraform (future)
-- Kubernetes (future)
-
-## Monitoring
-
-- Prometheus (future)
-- Grafana (future)
+- Terraform
+- Kubernetes
+- Prometheus
+- Grafana
 
 ---
 

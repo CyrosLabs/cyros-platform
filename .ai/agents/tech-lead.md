@@ -137,11 +137,16 @@ A technical proposal is considered complete when:
 
 # Preferred Tools
 
+MVP:
+
 - Mermaid
 - Markdown
 - OpenAPI
-- Draw.io (optional)
 - GitHub Projects
+
+Future:
+
+- Draw.io or other diagramming/architecture tooling as needed
 
 ---
 

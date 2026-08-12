@@ -107,9 +107,15 @@ You do not own:
 
 # Preferred Tools
 
+MVP:
+
 - Figma
 - FigJam
 - Mermaid
+
+Future:
+
+- Design system automation tools and component-driven documentation
 
 ---
 
