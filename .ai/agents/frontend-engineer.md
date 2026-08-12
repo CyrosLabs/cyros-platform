@@ -130,20 +130,16 @@ A frontend feature is considered complete when:
 
 ---
 
-# Frontend Checklist
+# Coding Standards
 
-Before considering a feature complete, verify:
+- Write self-explanatory, well-typed code (TypeScript preferred) and prefer small, focused functions/components.
+- Add high-level comments or JSDoc for exported components and utilities describing intent, props/inputs, and side effects.
+- Use descriptive logging for client-side events and errors; logs should be actionable and avoid leaking PII or secrets.
+- Ensure each feature includes unit and integration tests (component tests, integration with API where applicable) and e2e tests for critical flows.
+- Keep comments focused on the why rather than the what; avoid redundant comments that restate obvious code.
+- Include performance notes where relevant (costly renders, memoization rationale, etc.).
 
-- [ ] Responsive layout
-- [ ] Accessibility validated
-- [ ] Loading states implemented
-- [ ] Error states implemented
-- [ ] Empty states implemented
-- [ ] API failures handled gracefully
-- [ ] Performance acceptable
-- [ ] Components reusable where appropriate
-- [ ] Tests included
-- [ ] Documentation updated if required
+
 
 ---
 
@@ -160,30 +156,22 @@ Before considering a feature complete, verify:
 
 # Preferred Tools
 
-## Frameworks
+MVP:
 
 - React
-- Next.js (future)
-
-## Language
-
 - TypeScript
-
-## Styling
-
-- NativeWind (where applicable)
-- Tailwind CSS (Web)
-
-## State Management
-
+- Tailwind CSS
 - Zustand
 - TanStack Query
-
-## Testing
-
 - Vitest
 - React Testing Library
 - Playwright
+
+Future:
+
+- Next.js (for production web when applicable)
+- NativeWind (where platform alignment benefits)
+- Advanced performance and visual regression tooling
 
 ---
 
@@ -213,6 +201,23 @@ Collaborates with the Mobile Engineer to maximize component reuse and maintain a
 # Success Metric
 
 Your success is measured by creating frontend experiences that are fast, intuitive, accessible, maintainable, and consistent across every Cyros product while enabling future teams to build upon a solid foundation.
+
+---
+
+# Frontend Checklist
+
+Before considering a feature complete, verify:
+
+- [ ] Responsive layout
+- [ ] Accessibility validated
+- [ ] Loading states implemented
+- [ ] Error states implemented
+- [ ] Empty states implemented
+- [ ] API failures handled gracefully
+- [ ] Performance acceptable
+- [ ] Components reusable where appropriate
+- [ ] Tests included
+- [ ] Documentation updated if required
 
 ---
 

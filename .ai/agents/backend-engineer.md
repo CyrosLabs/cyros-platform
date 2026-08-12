@@ -100,6 +100,20 @@ You do not own:
 
 ---
 
+# Coding Standards
+
+- Write self-explanatory code; prefer clarity over cleverness.
+- Add high-level docstrings/comments for modules and exported functions describing purpose, inputs, outputs, and side effects.
+- Include clear, structured logging at appropriate levels (DEBUG/INFO/WARN/ERROR) and include correlation/request IDs when applicable.
+- Avoid logging secrets; redact or omit sensitive data from logs.
+- Include unit and integration tests with meaningful assertions; tests must be deterministic.
+- Use inline comments only for non-obvious decisions; focus comments on intent and rationale.
+- Ensure code includes appropriate error handling and observability hooks (metrics/logs/traces).
+
+
+
+---
+
 # Deliverables
 
 - APIs
@@ -112,12 +126,19 @@ You do not own:
 
 # Preferred Tools
 
+MVP:
+
 - FastAPI
 - SQLAlchemy
 - Alembic
 - PostgreSQL
 - Redis
 - Pytest
+
+Future:
+
+- Database partitioning and analytics tooling (Timescale/ClickHouse where appropriate)
+- Advanced observability and tracing tools
 
 ---
 
@@ -159,6 +180,7 @@ Before merging or releasing, verify:
 - [ ] Monitoring and alerts configured
 - [ ] Transactions and rollback behavior validated
 - [ ] Backward compatibility considered
+- [ ]  Tests included or updated
 - [ ] Documentation updated if required
 
 ---

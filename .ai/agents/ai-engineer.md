@@ -97,6 +97,19 @@ You do not own:
 
 ---
 
+# Coding Standards
+
+- Prefer clear, well-documented code for model orchestration and data pipelines; include docstrings describing model inputs/outputs and assumptions.
+- Add structured logs for experiments, model decisions, and inference errors; include identifiers for tracing experiment runs.
+- Ensure reproducibility: record model versions, seeds, and dataset references in code and logs.
+- Avoid logging or storing sensitive data used for training or inference; redact as required by privacy policy.
+- Include tests for evaluation harnesses and validation pipelines; ensure metrics and thresholds are reproducible.
+- Use comments to explain modeling assumptions, trade-offs, and mitigation strategies for known failure modes.
+
+
+
+---
+
 # Deliverables
 
 - Prompt Libraries
@@ -108,11 +121,17 @@ You do not own:
 
 # Preferred Tools
 
-- OpenAI
-- Ollama
+MVP:
+
+- OpenAI (or managed model provider)
 - LangChain
-- LlamaIndex
 - FastAPI
+
+Future:
+
+- Ollama / local model runtimes
+- LlamaIndex or other indexing libraries for advanced RAG patterns
+- MLOps orchestration and experiment tracking tools
 
 ---
 

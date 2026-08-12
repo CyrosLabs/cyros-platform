@@ -107,10 +107,15 @@ You do not own:
 
 # Preferred Tools
 
+MVP:
+
 - Markdown
 - Mermaid
 - OpenAPI
-- MkDocs (future)
+
+Future:
+
+- MkDocs (or other static site generators for docs sites)
 
 ---
 
