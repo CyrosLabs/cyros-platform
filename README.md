@@ -1,4 +1,3 @@
-
 # Cyros Labs
 
 > We build technology that helps people thrive.
@@ -31,45 +30,49 @@ To create thoughtful technology that helps people learn, grow, connect, and thri
 
 ---
 
-## Our Pillars
+## Products
+
+Cyros Labs develops products across different areas of everyday life.
 
 ### 🧠 Mind
 
-- Haru Haru
-- Companion
-- Challenges
+* Haru Haru
+* Companion
+* Challenges
 
 ### ❤️ Well-being
 
-- Diet Buddy
-- Workout
-- Diet Planner
+* Diet Buddy
+* Workout
+* Diet Planner
 
 ### 🏡 Home
 
-- Smart Pantry
-- Price Tracker
+* Smart Pantry
+* Price Tracker
 
 ### 💼 Work
 
-- Restaurant Platform
-- Invoices
-- Consulting Platform
-- Reports
+* Restaurant Platform
+* Invoices
+* Consulting Platform
+* Reports
 
 ### 💻 Creation
 
-- Public API Platform
-- Debugger
+* Public API Platform
+* Debugger
 
 ### ⏳ Time
 
-- Goals
-- Time Tracker
+* Goals
+* Time Tracker
 
 ### 🎮 Joy
 
-- Race Game
+* Race Game
+
+The repository may contain products at different stages of development. The current primary product under active development is **Haru Haru**.
 
 ---
 
@@ -77,26 +80,41 @@ To create thoughtful technology that helps people learn, grow, connect, and thri
 
 Cyros Labs follows a **platform-first architecture**.
 
-Products focus on user experiences and product-specific business flows.
+Products own their user experiences and product-specific business flows.
 
-The Platform provides reusable capabilities shared across products.
+The Platform provides reusable capabilities that should not be independently reimplemented by each product.
 
-Shared Packages provide reusable technical functionality.
+Shared Packages provide generic technical functionality that can be reused by products and platform services.
 
 Content is maintained independently from application logic.
 
-Infrastructure provides the deployment and operational foundation.
+Infrastructure provides the deployment and operational foundation for the system.
 
-This separation allows products to evolve independently while sharing a common technological foundation.
+The goal is to keep products independently evolvable while allowing them to share a common technological foundation.
 
 ```mermaid
 flowchart TD
-    A[Company / Product Vision] --> B[Platform]
-    B --> C[Product Apps]
+    A[Cyros Labs] --> B[Platform]
+    A --> C[Product Apps]
+
+    B --> C
     B --> D[Shared Packages]
+
     C --> E[Content]
+
     B --> F[Infrastructure]
-````
+    C --> F
+```
+
+The key architectural boundaries are:
+
+* **Products** own product-specific experiences, rules, and business flows.
+* **Platform** owns shared product capabilities.
+* **Shared Packages** provide generic reusable technical functionality.
+* **Content** contains product content independent from application logic.
+* **Infrastructure** provides deployment and operational capabilities.
+
+Products should not depend directly on other products. Shared capabilities should be provided through the Platform or appropriate Shared Packages.
 
 See the [Architecture Documentation](docs/architecture/overview.md) for the complete architectural model.
 
@@ -107,7 +125,7 @@ See the [Architecture Documentation](docs/architecture/overview.md) for the comp
 ```text
 apps/             Product applications
 platform/         Shared platform capabilities
-packages/         Shared libraries
+packages/         Shared technical libraries
 content/          Product content
 docs/             Project documentation
 .ai/              AI agents, workflows, rules, and context
@@ -117,7 +135,7 @@ scripts/           Automation scripts
 tools/             Development and engineering tools
 ```
 
-For more detail, see the [Repository Structure](docs/architecture/repository-structure.md).
+For the detailed repository structure, see [Repository Structure](docs/architecture/repository-structure.md).
 
 ---
 
@@ -131,58 +149,33 @@ For more detail, see the [Repository Structure](docs/architecture/repository-str
 * Simplicity Over Complexity
 * Build for the Long Term
 
+These principles guide both product development and engineering decisions across the repository.
+
 ---
 
 ## Current Focus
 
-We are currently building **Haru Haru**, a Korean learning platform designed to make language learning engaging, meaningful, and confidence-building.
+Cyros Labs is currently focused on **Haru Haru**, a Korean learning platform designed to make language learning engaging, meaningful, and confidence-building.
 
-The application lives in `apps/haru-haru` and uses Expo with TypeScript.
+The application lives in [`apps/haru-haru`](apps/haru-haru).
+
+See the [Haru Haru README](apps/haru-haru/README.md) for product and development-specific information.
 
 ---
 
 ## Development
 
-### Prerequisites
+The repository is a multi-area codebase. Development instructions are organized by concern rather than duplicated across individual projects.
 
-* Node.js 24.x
-
-### Run Haru Haru Locally
-
-```bash
-cd apps/haru-haru
-npm install
-npm start
-```
-
-Run on a specific platform:
-
-```bash
-npm run android
-npm run ios
-npm run web
-```
-
-### Validation
-
-```bash
-npm test -- --runInBand
-npx eslint . --ext .ts,.tsx
-npx tsc --noEmit
-```
-
-For complete development documentation, see:
+### Core Documentation
 
 * [Getting Started](docs/development/getting-started.md)
 * [Local Environment](docs/development/local-environment.md)
+* [Docker](docs/development/docker.md)
 * [Tooling](docs/development/tooling.md)
 * [Debugging](docs/development/debugging.md)
 * [Troubleshooting](docs/development/troubleshooting.md)
 * [FAQ](docs/development/faq.md)
-
----
-
-## Documentation
 
 ### Architecture
 
@@ -199,18 +192,6 @@ For complete development documentation, see:
 * [Scalability](docs/architecture/scalability.md)
 * [Decision Principles](docs/architecture/decision-principles.md)
 
-### Development
-
-* [Getting Started](docs/development/getting-started.md)
-* [Local Environment](docs/development/local-environment.md)
-* [Docker](docs/development/docker.md)
-* [Tooling](docs/development/tooling.md)
-* [Architecture Walkthrough](docs/development/architecture-walkthrough.md)
-* [Debugging](docs/development/debugging.md)
-* [Troubleshooting](docs/development/troubleshooting.md)
-* [Environment Variables](docs/development/environment-variables.md)
-* [FAQ](docs/development/faq.md)
-
 ### Engineering
 
 * [Testing](docs/engineering/testing.md)
@@ -225,7 +206,7 @@ For complete development documentation, see:
 
 ## AI-Assisted Development
 
-Cyros is designed to support AI-assisted software development.
+Cyros Labs is designed to support AI-assisted software development.
 
 The `.ai/` directory contains the project's AI engineering system:
 
@@ -239,17 +220,17 @@ The `.ai/` directory contains the project's AI engineering system:
 
 AI agents should follow the repository's architectural, coding, security, and workflow rules when modifying the project.
 
-The AI system is designed to work alongside the project's documentation rather than duplicate it.
+The AI system complements the project documentation rather than replacing it.
 
 ---
 
 ## Git Workflow
 
-The `main` branch is protected by repository rules that prevent force pushes and branch deletion, require linear commit history, and enforce passing status checks before merging.
-
-The repository ruleset is defined in `.github/ruleset.yml`.
+The `main` branch is protected by repository rules.
 
 Changes should be developed on dedicated branches and merged through pull requests.
+
+The repository ruleset is defined in `.github/ruleset.yml`.
 
 See [Contributing](CONTRIBUTING.md) for development and contribution guidelines.
 
@@ -257,11 +238,11 @@ See [Contributing](CONTRIBUTING.md) for development and contribution guidelines.
 
 ## Long-Term Vision
 
-Our goal is to build an ecosystem of connected products that improve the different pillars of everyday life.
+Cyros Labs aims to build an ecosystem of connected products that improve different pillars of everyday life.
 
-Products should work independently.
+Each product should be useful and evolvable on its own.
 
-Together, they should work even better.
+Together, shared platform capabilities can allow products to provide more value without creating direct product-to-product coupling.
 
 ---
 
