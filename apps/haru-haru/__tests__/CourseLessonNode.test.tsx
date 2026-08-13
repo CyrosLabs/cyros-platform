@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react-native';
 import { CourseLessonNode } from '../src/features/home/components/CourseLessonNode';
 
 const lesson = {
@@ -12,8 +12,25 @@ const lesson = {
 };
 
 describe('CourseLessonNode', () => {
-  it('renders completed lesson state', () => {
-    const tree = renderer.create(<CourseLessonNode lesson={lesson} isCurrent={false} />).toJSON();
-    expect(tree).toMatchSnapshot();
+  it('renders a completed lesson', async () => {
+    const { getByText } = await render(
+      <CourseLessonNode
+        lesson={lesson}
+        isCurrent={false}
+      />
+    );
+
+    expect(getByText('Vocab')).toBeTruthy();
+  });
+
+  it('renders the completion indicator', async () => {
+    const { getByText } = await render(
+      <CourseLessonNode
+        lesson={lesson}
+        isCurrent={false}
+      />
+    );
+
+    expect(getByText('✓')).toBeTruthy();
   });
 });
