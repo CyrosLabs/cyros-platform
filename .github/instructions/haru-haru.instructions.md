@@ -1,5 +1,3 @@
----
-
 ## applyTo: "apps/haru-haru/**"
 
 # Haru Haru Copilot Instructions
@@ -12,9 +10,7 @@ It is a Korean learning platform designed to make language learning engaging, me
 
 The application is located at:
 
-```text
 apps/haru-haru/
-```
 
 Haru Haru owns its own product experience, product-specific business rules, and learning flows.
 
@@ -44,19 +40,15 @@ Prefer the existing feature-oriented structure.
 
 Current application code lives primarily under:
 
-```text
 src/
 ├── features/
 └── theme/
-```
 
 Organize new product behavior by feature rather than creating broad technical layers without a concrete need.
 
 Prefer:
 
-```text
 src/features/<feature>/
-```
 
 for feature-specific code.
 
@@ -124,10 +116,8 @@ Application code should consume content rather than define large bodies of edito
 
 Before implementing shared functionality, check whether it already exists in:
 
-```text
 platform/
 packages/
-```
 
 Use an existing shared capability when appropriate.
 
@@ -193,9 +183,7 @@ npm test -- --runInBand
 
 Run commands from:
 
-```text
 apps/haru-haru/
-```
 
 The GitHub Actions CI workflow should be considered the final automated validation of the same project expectations.
 
@@ -246,14 +234,10 @@ Update Haru Haru documentation when development instructions, architecture, setu
 
 The product README is:
 
-```text
 apps/haru-haru/README.md
-```
 
 Repository-wide architectural rules belong in:
 
-```text
 docs/architecture/
-```
 
 Do not duplicate repository-wide architectural documentation in this file.

@@ -62,7 +62,6 @@ Use the repository's established ADR location and naming convention.
 
 Unless an existing ADR format says otherwise, include:
 
-```text id="ggh04h"
 # ADR: <Decision Title>
 
 ## Status
@@ -104,7 +103,6 @@ Proposed
 ## Follow-up
 
 <Required future work, if any>
-```
 
 Use factual, decision-oriented language.
 

@@ -1,5 +1,3 @@
----
-
 ## applyTo: "apps/**/web/**,apps/**/frontend/**,platform/**/web/**,platform/**/frontend/**"
 
 # Frontend Instructions
@@ -16,13 +14,11 @@ Frontend code belongs to the product experience unless it is a genuinely reusabl
 
 Keep the following responsibilities separate:
 
-```text
 UI
  ↓
 Product Feature
  ↓
 Platform / Shared Capability
-```
 
 Do not put product business rules into generic UI components.
 

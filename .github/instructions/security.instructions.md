@@ -1,5 +1,3 @@
----
-
 ## applyTo: "**/*"
 
 # Security Instructions

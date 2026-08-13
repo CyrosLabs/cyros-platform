@@ -1,5 +1,3 @@
----
-
 ## applyTo: "apps/**/mobile/**,apps/haru-haru/**,platform/**/mobile/**"
 
 # Mobile Instructions

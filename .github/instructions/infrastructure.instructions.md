@@ -1,5 +1,3 @@
----
-
 ## applyTo: "infrastructure/**,docker/**,scripts/**,.github/workflows/**,.github/ruleset.yml"
 
 # Infrastructure Instructions

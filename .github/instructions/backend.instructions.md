@@ -1,5 +1,3 @@
----
-
 ## applyTo: "platform/**,apps/**/backend/**,apps/**/api/**"
 
 # Backend Instructions
@@ -22,13 +20,11 @@ Before creating a backend service or capability, determine which architectural b
 
 Backend code should follow this dependency direction:
 
-```text
 Product Backend
       ↓
 Platform Capability
       ↓
 Shared Packages
-```
 
 Products must not depend directly on other products.
 
@@ -183,9 +179,7 @@ Backend code is security-sensitive by default.
 
 Follow the repository's security instructions in:
 
-```text
 .github/instructions/security.instructions.md
-```
 
 Authentication and authorization are separate concerns.
 
