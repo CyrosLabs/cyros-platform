@@ -1,5 +1,14 @@
-export type LessonType = 'hangul' | 'vocabulary' | 'grammar';
-export type LessonStatus = 'locked' | 'available' | 'in_progress' | 'completed';
+export type LessonType =
+  | 'start'
+  | 'lesson'
+  | 'hangul'
+  | 'vocabulary'
+  | 'grammar'
+  | 'test'
+  | 'video'
+  | 'song'
+  | 'story';
+export type LessonStatus = 'locked' | 'available' | 'in_progress' | 'current' | 'completed';
 
 export interface UserProfile {
   name: string;
@@ -60,6 +69,7 @@ export interface CourseLesson {
   type: LessonType;
   status: LessonStatus;
   stars?: number;
+  destination?: string;
 }
 
 export interface ProgressMetric {

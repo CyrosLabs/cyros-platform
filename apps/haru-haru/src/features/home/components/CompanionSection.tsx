@@ -24,10 +24,11 @@ export function CompanionSection({ companion }: CompanionSectionProps) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 18,
+    marginTop: 0,
+    width: 150,
     backgroundColor: colors.surface,
     borderRadius: 28,
-    padding: 18,
+    padding: 12,
     shadowColor: colors.shadow,
     shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 0.12,
@@ -37,6 +38,7 @@ const styles = StyleSheet.create({
   illustrationCard: {
     alignItems: 'center',
     justifyContent: 'center',
+    minHeight: 160,
   },
   wordBubble: {
     position: 'absolute',
