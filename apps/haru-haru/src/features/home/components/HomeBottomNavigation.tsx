@@ -1,6 +1,10 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, ImageSourcePropType, Pressable, StyleSheet, Text, View } from 'react-native';
 import { colors } from '../../../theme/colors';
+import homeIcon from '../assets/home_icon.png';
+import courseIcon from '../assets/course_icon.png';
+import favoritesIcon from '../assets/favorites_icon.png';
+import userIcon from '../assets/user_icon.png';
 
 export type HomeNavigationRoute =
   | 'home'
@@ -23,29 +27,15 @@ interface HomeBottomNavigationProps {
   onChangeRoute: (route: HomeNavigationRoute) => void;
 }
 
-const tabs: Array<{ key: HomeNavigationRoute; label: string }> = [
-  { key: 'home', label: 'Home' },
-  { key: 'course', label: 'Course' },
-  { key: 'favorites', label: 'Favorites' },
-  { key: 'user', label: 'User' },
+const tabs: Array<{ key: HomeNavigationRoute; label: string; icon: ImageSourcePropType }> = [
+  { key: 'home', label: 'Home', icon: homeIcon },
+  { key: 'course', label: 'Course', icon: courseIcon },
+  { key: 'favorites', label: 'Favorites', icon: favoritesIcon },
+  { key: 'user', label: 'User', icon: userIcon },
 ];
 
-function TabIcon({ active, label }: { active: boolean; label: string }) {
-  const style = [styles.iconBase, active && styles.iconActive];
-
-  if (label === 'Home') {
-    return <View style={[style, styles.homeIcon]}><View style={styles.homeRoof} /><View style={styles.homeBody} /></View>;
-  }
-
-  if (label === 'Course') {
-    return <View style={[style, styles.courseIcon]}><View style={styles.bookSpine} /><View style={styles.bookPage} /></View>;
-  }
-
-  if (label === 'Favorites') {
-    return <View style={[style, styles.favoriteIcon]}><View style={styles.favoriteHeart} /></View>;
-  }
-
-  return <View style={[style, styles.userIcon]}><View style={styles.userHead} /><View style={styles.userBody} /></View>;
+function TabIcon({ active, icon }: { active: boolean; icon: ImageSourcePropType }) {
+  return <Image source={icon} style={[styles.iconBase, active && styles.iconActive]} />;
 }
 
 export function HomeBottomNavigation({ selectedRoute, onChangeRoute }: HomeBottomNavigationProps) {
@@ -60,7 +50,7 @@ export function HomeBottomNavigation({ selectedRoute, onChangeRoute }: HomeBotto
             style={styles.tabButton}
             accessibilityLabel={`${tab.label} tab`}
           >
-            <TabIcon active={active} label={tab.label} />
+            <TabIcon active={active} icon={tab.icon} />
             <Text style={[styles.label, active && styles.active]}>{tab.label}</Text>
           </Pressable>
         );
@@ -94,95 +84,13 @@ const styles = StyleSheet.create({
   iconBase: {
     width: 24,
     height: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
+    resizeMode: 'contain',
     marginBottom: 4,
-    position: 'relative',
-  },
-  homeIcon: {
-    width: 25,
-    height: 25,
-  },
-  homeRoof: {
-    position: 'absolute',
-    top: 5,
-    left: 4,
-    width: 16,
-    height: 10,
-    borderLeftWidth: 2,
-    borderTopWidth: 2,
-    borderColor: colors.textDim,
-    transform: [{ rotate: '45deg' }],
-  },
-  homeBody: {
-    position: 'absolute',
-    bottom: 3,
-    left: 5,
-    width: 14,
-    height: 12,
-    borderRadius: 2,
-    borderWidth: 2,
-    borderColor: colors.textDim,
+    opacity: 0.7,
   },
   iconActive: {
     opacity: 1,
-  },
-  courseIcon: {
-    width: 24,
-    height: 24,
-  },
-  bookSpine: {
-    position: 'absolute',
-    left: 7,
-    width: 4,
-    height: 18,
-    borderRadius: 2,
-    backgroundColor: colors.textDim,
-  },
-  bookPage: {
-    position: 'absolute',
-    left: 9,
-    width: 10,
-    height: 18,
-    borderRadius: 2,
-    borderWidth: 2,
-    borderColor: colors.textDim,
-  },
-  favoriteIcon: {
-    width: 24,
-    height: 24,
-  },
-  favoriteHeart: {
-    width: 16,
-    height: 16,
-    backgroundColor: colors.textDim,
-    transform: [{ rotate: '45deg' }],
-    borderRadius: 2,
-    position: 'absolute',
-    top: 4,
-    left: 4,
-  },
-  userIcon: {
-    width: 24,
-    height: 24,
-  },
-  userHead: {
-    position: 'absolute',
-    top: 2,
-    left: 8,
-    width: 8,
-    height: 8,
-    borderRadius: 6,
-    backgroundColor: colors.textDim,
-  },
-  userBody: {
-    position: 'absolute',
-    bottom: 2,
-    left: 5,
-    width: 14,
-    height: 10,
-    borderRadius: 8,
-    backgroundColor: colors.textDim,
+    tintColor: colors.primary,
   },
   label: {
     fontSize: 10,
