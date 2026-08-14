@@ -26,57 +26,39 @@ and:
 
 ## Home Structure
 
+The current Home MVP is organized around a game-like learning roadmap instead of a set of dashboard cards.
+
 ┌─────────────────────────────────┐
 │ Header                          │
-│ User                 🔔    ⚙    │
+│ User / Level / Streak / Hearts │
+│ Notifications / Settings         │
+├─────────────────────────────────┤
+│ Companion / CTA                 │
+│                                 │
+│ Start button                    │
 ├─────────────────────────────────┤
 │                                 │
-│ Streak              Hearts      │
+│ TOPIK I Path                    │
+│ Start ─ Lesson ─ Grammar ─ Test │
+│       ├─ Hangeul / Video        │
+│       ├─ Song / Story           │
 │                                 │
 ├─────────────────────────────────┤
-│                                 │
-│ Companion                       │
-│                                 │
-├─────────────────────────────────┤
-│                                 │
-│ Continue Learning               │
-│ Lesson information              │
-│                         [Start] │
-│                                 │
-├─────────────────────────────────┤
-│                                 │
-│ Daily Challenge                 │
-│                                 │
-│ Daily Goal                      │
-│                                 │
-├─────────────────────────────────┤
-│                                 │
-│ TOPIK I Course Map              │
-│                                 │
-│ ○──●──●──○──○──○                │
-│                                 │
-│                         View All │
-│                                 │
-├─────────────────────────────────┤
-│                                 │
-│ Progress Summary                │
-│                                 │
-├─────────────────────────────────┤
-│                                 │
-│ Primary Navigation              │
+│ Bottom navigation               │
+│ Home | Course | Favorites | User│
 └─────────────────────────────────┘
 
 The current implementation uses the following conceptual sections:
 
 Header.
-Streak and Hearts.
-Companion.
-Continue Learning.
-Daily Challenge and Daily Goal.
-Course Map.
-Progress Summary.
+Streak and life indicators.
+Companion guidance.
+Primary learning path.
+Optional side quests.
+Start action.
+Bottom navigation.
 
-This matches the current Home implementation.
+This matches the new Home MVP rather than the earlier card-heavy dashboard.
 
 Home Header
 

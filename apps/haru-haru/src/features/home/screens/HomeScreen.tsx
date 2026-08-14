@@ -1,20 +1,15 @@
 import React from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
-import { CourseMap } from '../components/CourseMap';
-import { ContinueLearningCard } from '../components/ContinueLearningCard';
-import { DailyChallengeCard } from '../components/DailyChallengeCard';
-import { DailyGoalCard } from '../components/DailyGoalCard';
-import { HomeHeader } from '../components/HomeHeader';
-import { HeartsCard } from '../components/HeartsCard';
-import { ProgressSummary } from '../components/ProgressSummary';
-import { StreakCard } from '../components/StreakCard';
-import { CompanionSection } from '../components/CompanionSection';
-import { HomePageData } from '../types/home.types';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { colors } from '../../../theme/colors';
+import { CompanionSection } from '../components/CompanionSection';
+import { CourseMap } from '../components/CourseMap';
+import { HomeHeader } from '../components/HomeHeader';
+import { HomeNavigationRoute } from '../components/HomeBottomNavigation';
+import { HomePageData } from '../types/home.types';
 
 interface HomeScreenProps {
   data: HomePageData;
-  onNavigate: (route: 'course' | 'review' | 'favorites' | 'profile' | 'home') => void;
+  onNavigate: (route: HomeNavigationRoute) => void;
   onOpenNotifications: () => void;
   onOpenSettings: () => void;
 }
@@ -25,28 +20,28 @@ export function HomeScreen({ data, onNavigate, onOpenNotifications, onOpenSettin
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         <HomeHeader
           user={data.user}
+          streak={data.streak}
+          hearts={data.hearts}
           onNotificationPress={onOpenNotifications}
           onSettingsPress={onOpenSettings}
+          onStreakPress={() => onNavigate('lesson')}
         />
-        <View style={styles.sectionRow}>
-          <StreakCard streak={data.streak} />
-          <HeartsCard hearts={data.hearts} />
+
+        <View style={styles.bannerRow}>
+          <CompanionSection companion={data.companion} />
+          <View style={styles.ctaPanel}>
+            <Text style={styles.ctaTitle}>Today’s path</Text>
+            <Text style={styles.ctaText}>Lesson • Grammar • Quiz</Text>
+            <Text style={styles.ctaHint}>Continue your current streak.</Text>
+          </View>
         </View>
-        <CompanionSection companion={data.companion} />
-        <ContinueLearningCard
-          lesson={data.continueLearning}
-          onContinue={() => onNavigate('course')}
-        />
-        <View style={styles.activitiesRow}>
-          <DailyChallengeCard challenge={data.dailyChallenge} />
-          <DailyGoalCard goal={data.dailyGoal} />
-        </View>
+
         <CourseMap
-          title="TOPIK I Course Map"
+          title="TOPIK I Path"
           lessons={data.courseMap}
-          onViewAll={() => onNavigate('course')}
+          onNodePress={(route) => onNavigate(route as HomeNavigationRoute)}
+          onStartPress={() => onNavigate('lesson')}
         />
-        <ProgressSummary metrics={data.progressSummary} />
       </ScrollView>
     </View>
   );
@@ -58,14 +53,42 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
   scrollContent: {
-    paddingHorizontal: 20,
-    paddingBottom: 96,
+    paddingHorizontal: 16,
+    paddingTop: 18,
+    paddingBottom: 100,
   },
-  sectionRow: {
+  bannerRow: {
+    marginTop: 18,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    alignItems: 'stretch',
+    gap: 12,
   },
-  activitiesRow: {
-    flexDirection: 'column',
+  ctaPanel: {
+    flex: 1,
+    backgroundColor: colors.surface,
+    borderRadius: 24,
+    padding: 16,
+    justifyContent: 'center',
+    shadowColor: colors.shadow,
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.08,
+    shadowRadius: 16,
+    elevation: 4,
+  },
+  ctaTitle: {
+    color: colors.text,
+    fontSize: 16,
+    fontWeight: '800',
+  },
+  ctaText: {
+    marginTop: 8,
+    color: colors.primary,
+    fontWeight: '700',
+  },
+  ctaHint: {
+    marginTop: 6,
+    color: colors.textDim,
+    fontSize: 12,
+    lineHeight: 18,
   },
 });

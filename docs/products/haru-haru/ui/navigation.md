@@ -30,37 +30,47 @@ Platform navigation infrastructure may be shared, but product routes and navigat
 
 ## Primary Navigation
 
-The current Home screen exposes the following product destinations:
+The current Home MVP exposes the following product destinations:
 
 Home
 Course
-Review
 Favorites
-Profile
+User
 
 The current Home screen also supports secondary actions:
 
 Notifications
 Settings
 
-The exact navigation implementation may evolve, but these destinations represent the current product-level model.
+The exact implementation is intentionally lightweight while deeper product experiences are developed. The current Home MVP establishes stable navigation boundaries without implementing the full destination features.
 
 Primary Destinations
 Home
 
-The Home screen is the learner's primary dashboard.
+The Home screen is the learner's primary dashboard and learning map.
 
 It provides:
 
 Current learning context.
 Streak information.
-Hearts.
-Companion.
-Continue Learning.
-Daily Challenge.
-Daily Goal.
-Course Map.
-Progress Summary.
+Lives / hearts.
+Premium status.
+Companion guidance.
+A game-like roadmap that highlights required progress and optional activities.
+A clear Start action that begins the current learning flow.
+
+The current MVP uses a primary progression path with required activities:
+
+Lesson
+Grammar
+Test
+
+Optional activities remain visible but do not unlock the main path:
+
+Hangeul
+Video
+Song
+Story
 
 Home should help the learner answer:
 

@@ -1,22 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { colors } from '../../../theme/colors';
 import { Streak } from '../types/home.types';
 
 interface StreakCardProps {
   streak: Streak;
+  onPress?: () => void;
 }
 
 const dayLabels = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 
-export function StreakCard({ streak }: StreakCardProps) {
+export function StreakCard({ streak, onPress }: StreakCardProps) {
   const todayIndex = new Date().getDay() === 0 ? 6 : new Date().getDay() - 1;
 
   return (
-    <View style={styles.card}>
+    <Pressable style={styles.card} onPress={onPress} accessibilityLabel="Streak indicator">
       <View style={styles.row}>
         <Text style={styles.streakValue}>🔥 {streak.current}</Text>
-        <Text style={styles.streakLabel}>Day Streak</Text>
+        <Text style={styles.streakLabel}>Days</Text>
       </View>
       <View style={styles.weekRow}>
         {dayLabels.map((letter, index) => {
@@ -30,16 +31,16 @@ export function StreakCard({ streak }: StreakCardProps) {
           );
         })}
       </View>
-    </View>
+    </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-    padding: 18,
+    padding: 16,
     borderRadius: 24,
-    backgroundColor: colors.surface,
+    backgroundColor: colors.surfaceSoft,
     shadowColor: colors.shadow,
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.08,
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 14,
+    marginBottom: 12,
   },
   streakValue: {
     fontSize: 24,
@@ -58,8 +59,10 @@ const styles = StyleSheet.create({
     color: colors.primary,
   },
   streakLabel: {
-    fontSize: 14,
+    fontSize: 12,
     color: colors.textDim,
+    fontWeight: '700',
+    textTransform: 'uppercase',
   },
   weekRow: {
     flexDirection: 'row',
@@ -69,24 +72,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   dayInitial: {
-    fontSize: 12,
+    fontSize: 11,
     color: colors.textDim,
     marginBottom: 6,
+    fontWeight: '600',
   },
   todayText: {
     color: colors.primary,
     fontWeight: '700',
   },
   dot: {
-    width: 18,
-    height: 18,
-    borderRadius: 9,
+    width: 16,
+    height: 16,
+    borderRadius: 8,
   },
   dotActive: {
     backgroundColor: colors.primary,
   },
   dotInactive: {
-    backgroundColor: colors.surfaceSoft,
+    backgroundColor: colors.surface,
     borderWidth: 1,
     borderColor: colors.border,
   },
