@@ -1,19 +1,29 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native';
-import { HomeScreen } from './src/features/home/screens/HomeScreen';
+import { HomeBottomNavigation, HomeNavigationRoute } from './src/features/home/components/HomeBottomNavigation';
 import { homeData } from './src/features/home/data/mockHomeData';
-import { colors } from './src/theme/colors';
-import { HomeBottomNavigation } from './src/features/home/components/HomeBottomNavigation';
+import { HomeScreen } from './src/features/home/screens/HomeScreen';
 import { PlaceholderScreen } from './src/features/home/screens/PlaceholderScreen';
+import { colors } from './src/theme/colors';
 
-export type AppRoute =
-  | 'home'
-  | 'course'
-  | 'review'
-  | 'favorites'
-  | 'profile'
-  | 'notifications'
-  | 'settings';
+export type AppRoute = HomeNavigationRoute;
+
+const routeTitles: Record<AppRoute, string> = {
+  home: 'Home',
+  course: 'Course',
+  favorites: 'Favorites',
+  user: 'User',
+  profile: 'User',
+  notifications: 'Notifications',
+  settings: 'Settings',
+  lesson: 'Lesson',
+  grammar: 'Grammar',
+  test: 'Test',
+  hangeul: 'Hangeul',
+  video: 'Video',
+  song: 'Song',
+  story: 'Story',
+};
 
 export default function App() {
   const [route, setRoute] = useState<AppRoute>('home');
@@ -30,14 +40,14 @@ export default function App() {
       );
     }
 
-    const title =
-      route === 'notifications'
-        ? 'Notifications'
-        : route === 'settings'
-        ? 'Settings'
-        : route.charAt(0).toUpperCase() + route.slice(1);
+    const title = routeTitles[route] ?? 'Haru Haru';
 
-    return <PlaceholderScreen title={title} subtitle="This screen is a placeholder for the current Haru Haru flow." />;
+    return (
+      <PlaceholderScreen
+        title={title}
+        subtitle="This MVP destination is intentionally minimal while the full learning experience is developed later."
+      />
+    );
   };
 
   return (

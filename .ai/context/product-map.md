@@ -81,22 +81,30 @@ Do not create feature folders simply because they are listed as possible future 
 
 Current Home Experience
 
-The Home screen is currently the primary learner dashboard.
+The Home screen is the primary learner dashboard and the main product entry point for the current MVP.
 
 It contains:
 
 Header.
-Notifications access.
-Settings access.
-Streak.
-Hearts.
-Companion.
-Continue Learning.
-Daily Challenge.
-Daily Goal.
-TOPIK I Course Map.
-Progress Summary.
+Streak and life indicators.
+Premium status.
+Companion guidance.
+A game-like learning roadmap.
+A Start action.
 Primary navigation.
+
+The current Home MVP focuses on a required progression path:
+
+Lesson
+Grammar
+Test
+
+Optional activities are visible alongside the main path but are not treated as progression requirements:
+
+Hangeul
+Video
+Song
+Story
 
 The Home implementation currently consumes application-owned data while deeper learning and learner-state systems are being developed.
 
