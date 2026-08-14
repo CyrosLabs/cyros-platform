@@ -1,8 +1,16 @@
 import React from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { colors } from '../../../theme/colors';
+import { Image, ImageBackground, ImageSourcePropType, Pressable, StyleSheet, Text, View } from 'react-native';
 import { CourseLesson } from '../types/home.types';
-import { CourseLessonNode } from './CourseLessonNode';
+import roadMapBackground from '../assets/road_map_level_1.png';
+import startIcon from '../assets/start_icon.png';
+import grammarIcon from '../assets/grammar_icon.png';
+import testIcon from '../assets/test_icon.png';
+import hangeulIcon from '../assets/hangeul_icon.jpg';
+import videoIcon from '../assets/video_icon.png';
+import songIcon from '../assets/song_icon.png';
+import storyIcon from '../assets/story_icon.png';
+import completeLevelIcon from '../assets/complete_level_icon.png';
+import incompleteLevelIcon from '../assets/incomplete_level_icon.png';
 
 interface CourseMapProps {
   title: string;
@@ -11,121 +19,139 @@ interface CourseMapProps {
   onStartPress: () => void;
 }
 
-const optionalActivityTypes = new Set(['hangul', 'video', 'song', 'story']);
+const activityImageMap: Record<string, ImageSourcePropType | null> = {
+  lesson: null,
+  grammar: grammarIcon,
+  test: testIcon,
+  hangul: hangeulIcon,
+  video: videoIcon,
+  song: songIcon,
+  story: storyIcon,
+};
 
-export function CourseMap({ title, lessons, onNodePress, onStartPress }: CourseMapProps) {
+const nodeLayout: Record<string, { left: string; top: string }> = {
+  start: { left: '49%', top: '83%' },
+  lesson: { left: '51%', top: '55%' },
+  grammar: { left: '61%', top: '58%' },
+  test: { left: '50%', top: '14%' },
+  hangul: { left: '41%', top: '76%' },
+  video: { left: '17%', top: '68%' },
+  song: { left: '73%', top: '52%' },
+  story: { left: '20%', top: '32%' },
+};
+
+function getNodeSource(lesson: CourseLesson): ImageSourcePropType {
+  if (lesson.type === 'start') {
+    return startIcon;
+  }
+
+  if (lesson.type === 'lesson' || lesson.type === 'grammar' || lesson.type === 'test') {
+    return lesson.status === 'completed' ? completeLevelIcon : incompleteLevelIcon;
+  }
+
+  return activityImageMap[lesson.type] ?? incompleteLevelIcon;
+}
+
+export function CourseMap({ lessons, onNodePress, onStartPress }: CourseMapProps) {
   return (
-    <View style={styles.card}>
-      <View style={styles.headerRow}>
-        <View>
-          <Text style={styles.title}>{title}</Text>
-          <Text style={styles.subtitle}>Learning path</Text>
-        </View>
-        <Pressable onPress={onStartPress} accessibilityLabel="Start learning" style={styles.startButton}>
-          <Text style={styles.startText}>Start</Text>
-        </Pressable>
-      </View>
+    <View style={styles.mapContainer}>
+      <ImageBackground source={roadMapBackground} style={styles.mapBackground} imageStyle={styles.mapImage}>
+        {lessons.map((lesson) => {
+          const isStart = lesson.type === 'start';
+          const layout = nodeLayout[lesson.type] ?? { left: '50%', top: '50%' };
+          const isStatusNode = ['lesson', 'grammar', 'test'].includes(lesson.type);
+          const label = isStart ? 'Start' : lesson.title;
 
-      <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView} contentContainerStyle={styles.mapScrollContent}>
-        <View style={styles.mapCanvas}>
-          <View style={styles.pathLine} />
+          return (
+            <Pressable
+              key={lesson.id}
+              accessibilityLabel={isStart ? 'Start learning' : label}
+              onPress={() => (isStart ? onStartPress() : onNodePress(lesson.destination ?? 'course'))}
+              style={[
+                styles.nodeButton,
+                { left: layout.left as unknown as number, top: layout.top as unknown as number },
+                isStatusNode && styles.statusNode,
+              ]}
+            >
+              {isStart ? (
+                <Image source={startIcon} style={styles.startButton} />
+              ) : (
+                <>
+                  {lesson.type === 'grammar' ? (
+                    <Image source={grammarIcon} style={styles.activityIcon} />
+                  ) : lesson.type === 'test' ? (
+                    <Image source={testIcon} style={styles.activityIcon} />
+                  ) : lesson.type === 'hangul' ? (
+                    <Image source={hangeulIcon} style={styles.activityIcon} />
+                  ) : lesson.type === 'video' ? (
+                    <Image source={videoIcon} style={styles.activityIcon} />
+                  ) : lesson.type === 'song' ? (
+                    <Image source={songIcon} style={styles.activityIcon} />
+                  ) : lesson.type === 'story' ? (
+                    <Image source={storyIcon} style={styles.activityIcon} />
+                  ) : (
+                    <Image source={getNodeSource(lesson)} style={styles.statusIcon} />
+                  )}
 
-          {lessons.map((lesson) => {
-            const isOptional = optionalActivityTypes.has(lesson.type);
-            const isCurrent = lesson.status === 'current' || lesson.status === 'in_progress';
-
-            return (
-              <View
-                key={lesson.id}
-                style={[styles.nodeRow, isOptional && styles.optionalNodeRow]}
-              >
-                <CourseLessonNode
-                  lesson={lesson}
-                  isCurrent={isCurrent}
-                  compact={isOptional}
-                  onPress={() => onNodePress(lesson.destination ?? 'course')}
-                />
-              </View>
-            );
-          })}
-        </View>
-      </ScrollView>
+                  {!isStart && (
+                    <Text style={styles.nodeLabel}>{lesson.title}</Text>
+                  )}
+                </>
+              )}
+            </Pressable>
+          );
+        })}
+      </ImageBackground>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  card: {
-    marginTop: 18,
-    padding: 18,
+  mapContainer: {
+    flex: 1,
     borderRadius: 28,
-    backgroundColor: colors.surface,
-    shadowColor: colors.shadow,
-    shadowOffset: { width: 0, height: 10 },
-    shadowOpacity: 0.12,
-    shadowRadius: 24,
-    elevation: 6,
+    overflow: 'hidden',
+    marginHorizontal: 8,
+    marginBottom: 10,
   },
-  headerRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  mapBackground: {
+    width: '100%',
+    height: '100%',
+    minHeight: 520,
+  },
+  mapImage: {
+    resizeMode: 'cover',
+  },
+  nodeButton: {
+    position: 'absolute',
+    transform: [{ translateX: -30 }, { translateY: -30 }],
     alignItems: 'center',
-    marginBottom: 16,
+    justifyContent: 'center',
   },
-  title: {
-    color: colors.text,
-    fontSize: 20,
-    fontWeight: '800',
-  },
-  subtitle: {
-    marginTop: 4,
-    color: colors.textDim,
-    fontSize: 12,
-    fontWeight: '600',
-    letterSpacing: 0.8,
-    textTransform: 'uppercase',
+  statusNode: {
+    transform: [{ translateX: -26 }, { translateY: -26 }],
   },
   startButton: {
-    backgroundColor: colors.primary,
-    borderRadius: 999,
-    paddingHorizontal: 18,
-    paddingVertical: 10,
+    width: 100,
+    height: 42,
+    resizeMode: 'contain',
   },
-  startText: {
-    color: colors.surface,
-    fontSize: 13,
-    fontWeight: '700',
-    letterSpacing: 0.8,
+  activityIcon: {
+    width: 54,
+    height: 54,
+    resizeMode: 'contain',
+  },
+  statusIcon: {
+    width: 46,
+    height: 46,
+    resizeMode: 'contain',
+  },
+  nodeLabel: {
+    marginTop: 6,
+    fontSize: 10,
+    fontWeight: '800',
+    color: '#2F2640',
+    letterSpacing: 1,
     textTransform: 'uppercase',
-  },
-  scrollView: {
-    maxHeight: 460,
-  },
-  mapScrollContent: {
-    paddingBottom: 8,
-  },
-  mapCanvas: {
-    position: 'relative',
-    paddingVertical: 10,
-    minHeight: 420,
-  },
-  pathLine: {
-    position: 'absolute',
-    left: '50%',
-    top: 18,
-    bottom: 14,
-    width: 4,
-    marginLeft: -2,
-    borderRadius: 4,
-    backgroundColor: colors.border,
-  },
-  nodeRow: {
-    alignItems: 'center',
-    width: '100%',
-    zIndex: 1,
-  },
-  optionalNodeRow: {
-    alignItems: 'flex-end',
-    paddingRight: 18,
   },
 });
