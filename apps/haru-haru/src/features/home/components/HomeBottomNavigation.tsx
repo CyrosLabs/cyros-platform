@@ -14,6 +14,7 @@ export type HomeNavigationRoute =
   | 'profile'
   | 'notifications'
   | 'settings'
+  | 'premium'
   | 'lesson'
   | 'grammar'
   | 'test'

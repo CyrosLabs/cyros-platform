@@ -5,54 +5,53 @@ import { Hearts, Streak, UserProfile } from '../types/home.types';
 import streakIcon from '../assets/streak_icon.png';
 import levelIcon from '../assets/level_icon.png';
 import lifeIcon from '../assets/life_icon.png';
-import premiumUserIcon from '../assets/premium_user_icon.png';
-import lifeBarIcon from '../assets/life_bar_icon.jpg';
-import lifeBarsIcon from '../assets/life_bars_icon.png';
+import AvatarIcon from '../assets/avatar_icon.svg';
 
 interface HomeHeaderProps {
   user: UserProfile;
   streak: Streak;
   hearts: Hearts;
-  onNotificationPress?: () => void;
-  onSettingsPress?: () => void;
+  onPremiumPress?: () => void;
   onStreakPress?: () => void;
 }
 
-export function HomeHeader({ user, streak, hearts, onStreakPress }: HomeHeaderProps) {
-  const lifeSlots = Array.from({ length: 5 }, (_, index) => index < hearts.current);
+export function HomeHeader({ user, streak, hearts, onPremiumPress, onStreakPress }: HomeHeaderProps) {
+  const levelProgress = Math.min((user.currentXP / Math.max(user.nextLevelXP, 1)) * 100, 100);
+  const lifeProgress = Math.min((hearts.current / Math.max(hearts.maximum, 1)) * 100, 100);
 
   return (
     <View style={styles.container}>
       <View style={styles.headerRow}>
-        <Pressable accessibilityLabel="Streak indicator" onPress={onStreakPress} style={styles.streakBadge}>
-          <Image source={streakIcon} style={styles.assetIcon} />
+        <Pressable accessibilityLabel="Streak indicator" onPress={onStreakPress} style={styles.streakChip}>
+          <Image source={streakIcon} style={styles.icon} />
           <Text style={styles.streakText}>{streak.current} DAYS</Text>
         </Pressable>
 
-        <View style={styles.levelBadge}>
-          <Image source={levelIcon} style={styles.assetIconSmall} />
-          <View style={styles.levelTextWrap}>
-            <Text style={styles.levelLabel}>TOPIK I</Text>
-            <Text style={styles.levelValue}>Level {user.level}</Text>
+        <View style={styles.levelChip}>
+          <View style={styles.statIconWrap}>
+            <Image source={levelIcon} style={styles.statIcon} />
+            <Text style={styles.levelNumber}>{user.level}</Text>
+          </View>
+
+          <View style={styles.statMeta}>
+            <Text style={styles.statLabel}>TOPIK I</Text>
+            <Text style={styles.statValue}>Level {user.level}</Text>
+            <View style={styles.progressTrack}>
+              <View style={[styles.progressFill, { width: `${levelProgress}%` }]} />
+            </View>
           </View>
         </View>
 
-        <View accessibilityLabel="Lives indicator" style={styles.lifeBadge}>
-          <Image source={lifeIcon} style={styles.assetIconSmall} />
-          <View style={styles.lifeBars}>
-            {lifeSlots.map((isFilled, index) => (
-              <Image
-                key={`life-${index}`}
-                source={isFilled ? lifeBarsIcon : lifeBarIcon}
-                style={[styles.lifeBarIcon, !isFilled && styles.lifeBarMuted]}
-              />
-            ))}
+        <View accessibilityLabel="Lives indicator" style={styles.lifeChip}>
+          <Image source={lifeIcon} style={styles.icon} />
+          <View style={styles.progressTrack}>
+            <View style={[styles.lifeFill, { width: `${lifeProgress}%` }]} />
           </View>
         </View>
 
-        <View accessibilityLabel="Premium user indicator" style={styles.premiumBadge}>
-          <Image source={premiumUserIcon} style={styles.premiumIcon} />
-        </View>
+        <Pressable accessibilityLabel="Premium user indicator" onPress={onPremiumPress} style={styles.premiumChip}>
+          <AvatarIcon width={22} height={22} />
+        </Pressable>
       </View>
     </View>
   );
@@ -60,112 +59,136 @@ export function HomeHeader({ user, streak, hearts, onStreakPress }: HomeHeaderPr
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    paddingVertical: 8,
-    paddingHorizontal: 10,
+    paddingHorizontal: 12,
+    paddingTop: 12,
+    paddingBottom: 8,
   },
   headerRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    gap: 8,
+    gap: 6,
   },
-  streakBadge: {
+  streakChip: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#FFFBF0',
-    borderWidth: 2,
-    borderColor: '#F7D57C',
-    borderRadius: 999,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-    minWidth: 92,
-  },
-  streakText: {
-    fontSize: 12,
-    fontWeight: '800',
-    color: '#E86B2D',
-    letterSpacing: 0.5,
-  },
-  levelBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#F5F4FF',
-    borderRadius: 999,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-    flexShrink: 1,
-    maxWidth: '34%',
-  },
-  levelTextWrap: {
-    marginLeft: 6,
-  },
-  levelLabel: {
-    color: colors.textDim,
-    fontSize: 9,
-    fontWeight: '700',
-    letterSpacing: 0.8,
-    textTransform: 'uppercase',
-  },
-  levelValue: {
-    color: colors.text,
-    fontSize: 12,
-    fontWeight: '800',
-  },
-  lifeBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#FCEEF5',
+    backgroundColor: '#FFF6E7',
     borderRadius: 999,
     paddingHorizontal: 8,
     paddingVertical: 6,
+    borderWidth: 2,
+    borderColor: '#F4D177',
+    shadowColor: colors.shadow,
+    shadowOpacity: 0.08,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
     flexShrink: 1,
-    maxWidth: '32%',
   },
-  lifeBars: {
+  streakText: {
+    color: '#E66B2B',
+    fontSize: 11,
+    fontWeight: '800',
+    letterSpacing: 0.5,
+    flexShrink: 1,
+  },
+  levelChip: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: 6,
-    gap: 2,
+    backgroundColor: '#F5F1FF',
+    borderRadius: 999,
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+    flex: 1.35,
+    minWidth: 0,
+    maxWidth: 190,
   },
-  lifeBarIcon: {
-    width: 10,
-    height: 10,
-    resizeMode: 'contain',
-  },
-  lifeBarMuted: {
-    opacity: 0.45,
-  },
-  premiumBadge: {
-    width: 26,
-    height: 26,
-    borderRadius: 13,
-    backgroundColor: '#FFF6D1',
-    justifyContent: 'center',
+  statIconWrap: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    backgroundColor: '#E8E0FF',
     alignItems: 'center',
-    elevation: 2,
-    shadowColor: colors.shadow,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.14,
-    shadowRadius: 6,
-  },
-  premiumIcon: {
-    width: 18,
-    height: 18,
-    resizeMode: 'contain',
-  },
-  assetIcon: {
-    width: 18,
-    height: 18,
-    resizeMode: 'contain',
+    justifyContent: 'center',
     marginRight: 6,
+    flexShrink: 0,
   },
-  assetIconSmall: {
+  levelNumber: {
+    position: 'absolute',
+    color: colors.text,
+    fontSize: 9,
+    fontWeight: '800',
+  },
+  statIcon: {
+    width: 18,
+    height: 18,
+    resizeMode: 'contain',
+  },
+  statMeta: {
+    flex: 1,
+    minWidth: 0,
+  },
+  statLabel: {
+    color: colors.textDim,
+    fontSize: 7,
+    fontWeight: '700',
+    letterSpacing: 0.6,
+    textTransform: 'uppercase',
+  },
+  statValue: {
+    color: colors.text,
+    fontSize: 10,
+    fontWeight: '800',
+    marginBottom: 4,
+  },
+  progressTrack: {
+    height: 6,
+    backgroundColor: '#E7E1F5',
+    borderRadius: 999,
+    overflow: 'hidden',
+    flex: 1,
+    minWidth: 38,
+  },
+  progressFill: {
+    height: '100%',
+    backgroundColor: '#7B5BFF',
+    borderRadius: 999,
+  },
+  lifeFill: {
+    height: '100%',
+    backgroundColor: '#FF7A8A',
+    borderRadius: 999,
+  },
+  lifeChip: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFF1F5',
+    borderRadius: 999,
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+    flex: 1,
+    minWidth: 0,
+    maxWidth: 180,
+  },
+  premiumChip: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: '#FFF7D1',
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: colors.shadow,
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 2,
+    flexShrink: 0,
+  },
+  icon: {
     width: 16,
     height: 16,
     resizeMode: 'contain',
-  },
-  onPressable: {
-    opacity: 1,
+    marginRight: 6,
+    flexShrink: 0,
   },
 });
