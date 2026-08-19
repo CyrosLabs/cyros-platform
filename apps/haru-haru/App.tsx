@@ -16,6 +16,7 @@ const routeTitles: Record<AppRoute, string> = {
   profile: 'User',
   notifications: 'Notifications',
   settings: 'Settings',
+  premium: 'Premium',
   lesson: 'Lesson',
   grammar: 'Grammar',
   test: 'Test',
@@ -42,10 +43,17 @@ export default function App() {
 
     const title = routeTitles[route] ?? 'Haru Haru';
 
+    const isPremium = route === 'premium';
+
     return (
       <PlaceholderScreen
         title={title}
-        subtitle="This MVP destination is intentionally minimal while the full learning experience is developed later."
+        subtitle={
+          isPremium
+            ? 'Premium subscription screen coming soon.'
+            : 'This MVP destination is intentionally minimal while the full learning experience is developed later.'
+        }
+        onBack={() => setRoute('home')}
       />
     );
   };

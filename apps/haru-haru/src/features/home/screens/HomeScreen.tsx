@@ -16,11 +16,16 @@ interface HomeScreenProps {
 export function HomeScreen({ data, onNavigate }: HomeScreenProps) {
   return (
     <View style={styles.screen}>
-      <HomeHeader user={data.user} streak={data.streak} hearts={data.hearts} onStreakPress={() => onNavigate('lesson')} />
+      <HomeHeader
+        user={data.user}
+        streak={data.streak}
+        hearts={data.hearts}
+        onStreakPress={() => onNavigate('lesson')}
+        onPremiumPress={() => onNavigate('premium')}
+      />
 
       <View style={styles.roadmapWrapper}>
         <CourseMap
-          title="TOPIK I Path"
           lessons={data.courseMap}
           onNodePress={(route) => onNavigate(route as HomeNavigationRoute)}
           onStartPress={() => onNavigate('lesson')}
@@ -37,6 +42,6 @@ const styles = StyleSheet.create({
   },
   roadmapWrapper: {
     flex: 1,
-    marginTop: 8,
+    marginTop: 4,
   },
 });
