@@ -5,6 +5,11 @@ import { HomeBottomNavigation } from '../src/features/home/components/HomeBottom
 import { homeData } from '../src/features/home/data/mockHomeData';
 import { HomeScreen } from '../src/features/home/screens/HomeScreen';
 
+jest.mock('react-native-safe-area-context', () => ({
+  SafeAreaProvider: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+  useSafeAreaInsets: () => ({ top: 0, bottom: 0, left: 0, right: 0 }),
+}));
+
 const getTextValue = (value: React.ReactNode): string => {
 if (typeof value === 'string' || typeof value === 'number') {
    return String(value);
@@ -40,20 +45,20 @@ act(() => {
 };
 
 const renderHomeScreen = (overrides: Partial<React.ComponentProps<typeof HomeScreen>> = {}) => {
-const props: React.ComponentProps<typeof HomeScreen> = {
+  const props: React.ComponentProps<typeof HomeScreen> = {
    data: homeData,
    onNavigate: jest.fn(),
    onOpenNotifications: jest.fn(),
    onOpenSettings: jest.fn(),
    ...overrides,
-};
+  };
 
-let screen: ReturnType<typeof create>;
-act(() => {
+  let screen: ReturnType<typeof create>;
+  act(() => {
    screen = create(<HomeScreen {...props} />);
-});
+  });
 
-return screen!;
+  return screen!;
 };
 
 describe('HomeScreen', () => {

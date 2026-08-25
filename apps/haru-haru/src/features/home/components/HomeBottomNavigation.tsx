@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, ImageSourcePropType, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors } from '../../../theme/colors';
 import homeIcon from '../assets/home_icon.png';
 import courseIcon from '../assets/course_icon.png';
@@ -40,8 +41,10 @@ function TabIcon({ active, icon }: { active: boolean; icon: ImageSourcePropType 
 }
 
 export function HomeBottomNavigation({ selectedRoute, onChangeRoute }: HomeBottomNavigationProps) {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { paddingBottom: insets.bottom + 18 }]}>
       {tabs.map((tab) => {
         const active = selectedRoute === tab.key || (tab.key === 'user' && selectedRoute === 'profile');
         return (
