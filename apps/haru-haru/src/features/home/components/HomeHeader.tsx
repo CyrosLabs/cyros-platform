@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors } from '../../../theme/colors';
 import { Hearts, Streak, UserProfile } from '../types/home.types';
 import streakIcon from '../assets/streak_icon.png';
@@ -16,11 +17,12 @@ interface HomeHeaderProps {
 }
 
 export function HomeHeader({ user, streak, hearts, onPremiumPress, onStreakPress }: HomeHeaderProps) {
+  const insets = useSafeAreaInsets();
   const levelProgress = Math.min((user.currentXP / Math.max(user.nextLevelXP, 1)) * 100, 100);
   const lifeProgress = Math.min((hearts.current / Math.max(hearts.maximum, 1)) * 100, 100);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { paddingTop: insets.top + 12 }]}>
       <View style={styles.headerRow}>
         <Pressable accessibilityLabel="Streak indicator" onPress={onStreakPress} style={styles.streakChip}>
           <Image source={streakIcon} style={styles.icon} />
@@ -60,7 +62,6 @@ export function HomeHeader({ user, streak, hearts, onPremiumPress, onStreakPress
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 12,
-    paddingTop: 12,
     paddingBottom: 8,
   },
   headerRow: {
